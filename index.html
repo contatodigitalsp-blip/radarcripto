@@ -1,14 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BitNada — Monitor Cripto</title>
-<link rel="preconnect" href="https://fonts.googleapis.com/">
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800\&family=IBM+Plex+Mono:wght@400;500;600;700\&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 :root {
   --bg:        #0e0d13;
   --bg2:       rgba(255,255,255,.055);
@@ -39,6 +41,7 @@ body.light {
   --tbtn-c:    #4a4a58;
   --card-shadow: 0 12px 32px -10px rgba(40,40,70,.20);
 }
+
 body {
   background: var(--bg);
   color: var(--text);
@@ -70,6 +73,7 @@ body.light::before {
     radial-gradient(circle at 50% 116%, rgba(31,157,107,.10), transparent 46%),
     var(--bg);
 }
+
 /* ── HEADER ── */
 header {
   display: flex;
@@ -91,6 +95,7 @@ header h1 { color: var(--accent); font-size: 1.6rem; margin-bottom: 3px; }
   transition: opacity .2s, background .2s; white-space: nowrap;
 }
 .btn:hover { opacity: .75; }
+
 /* ── CARDS ── */
 .card {
   background: var(--bg2);
@@ -108,6 +113,7 @@ header h1 { color: var(--accent); font-size: 1.6rem; margin-bottom: 3px; }
   margin-bottom: 14px;
   letter-spacing: .2px;
 }
+
 /* ── KPI GRID ── */
 .kpi-grid {
   display: grid;
@@ -135,6 +141,7 @@ header h1 { color: var(--accent); font-size: 1.6rem; margin-bottom: 3px; }
 .kpi-label { color: var(--sub); font-size: .72rem; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 5px; }
 .kpi-val   { font-size: 1.35rem; font-weight: 700; }
 .kpi-chg   { font-size: .78rem; margin-top: 3px; display: inline-block; }
+
 /* ── KPI cards com degradê (BTC / ETH / PROHash) ── */
 .kpi-grad { border: none; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.3); }
 .kpi-grad .kpi-label { color: #fff; font-weight: 800; font-size: .9rem; opacity: 1; text-shadow: 0 1px 3px rgba(0,0,0,.4); }
@@ -142,28 +149,35 @@ header h1 { color: var(--accent); font-size: 1.6rem; margin-bottom: 3px; }
 .kpi-btc { background: linear-gradient(135deg, #f7931a 0%, #fb9b27 50%, #ffac3e 100%); }
 .kpi-eth { background: linear-gradient(135deg, #7d92ff 0%, #3c4a92 46%, #26262c 100%); }
 .kpi-prohash { background: linear-gradient(135deg, #1ad380 0%, #0e7d50 50%, #064027 100%); text-decoration: none; }
+
 /* ícone da moeda no rótulo */
 .kpi-coin { width: 23px; height: 23px; border-radius: 50%; vertical-align: -5px; margin-right: 6px; }
+
 /* preço + variação inline (variação ao lado do preço, com menos destaque) */
 .kpi-priceline  { display: flex; align-items: baseline; justify-content: center; gap: 6px; row-gap: 1px; flex-wrap: wrap; white-space: nowrap; }
 .kpi-chg-inline { font-size: .85rem; font-weight: 700; }
 .kpi-chg-inline.up  { color: #bef7c2; }
 .kpi-chg-inline.dn  { color: #ffccc7; }
 .kpi-chg-inline.neu { color: #eee; }
+
 /* sub-infos (supply / bloco / gás) — maiores agora que sobrou espaço */
 .kpi-sub   { margin-top: 11px; font-size: .85rem; color: rgba(255,255,255,.92); line-height: 1.65; }
 .kpi-sub b { font-weight: 800; color: #fff; }
 .kpi-sub-k { opacity: .85; }
 .kpi-block { margin-top: 4px; font-weight: 800; font-size: 1.05rem; letter-spacing: .3px; color: #fff; }
+
 /* card com dois mini-stats (Market Cap + USD/BRL · Fear&Greed + MVRV) */
 .kpi-mini .kpi-val { font-size: 1.12rem; }
 .kpi-divider { height: 1px; background: var(--border); margin: 9px 0; }
+
 /* F&G: número ao lado do nome */
 .kpi-fg-inline { font-weight: 800; font-size: 1.1rem; margin-left: 5px; }
+
 /* F&G barra horizontal (Bitcoin pegando fogo) + MVRV no mesmo card */
 #fg-bar { margin-top: 4px; }
 #fg-bar svg { width: 100%; display: block; overflow: visible; }
 .kpi-mvrv-v { font-size: 1.5rem; font-weight: 800; }
+
 /* banner PROHash */
 .kpi-prohash-in   { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; gap: 7px; min-height: 96px; }
 .kpi-prohash-logo { font-size: 1.5rem; font-weight: 900; color: #fff; letter-spacing: .5px; line-height: 1; }
@@ -171,10 +185,12 @@ header h1 { color: var(--accent); font-size: 1.6rem; margin-bottom: 3px; }
 .kpi-prohash-off  { font-size: 1.55rem; font-weight: 900; color: #fff; background: rgba(0,0,0,.22); padding: 5px 18px; border-radius: 22px; letter-spacing: .5px; line-height: 1; }
 .kpi-prohash-tag  { font-size: .74rem; color: rgba(255,255,255,.92); letter-spacing: .3px; }
 .kpi-prohash-tag b { color: #fff; font-weight: 800; }
+
 /* ── COLORS — badges com fundo ── */
 .up  { color: var(--green); }
 .dn  { color: var(--red); }
 .neu { color: var(--sub); }
+
 /* Pill colorida para variações — muito mais visível */
 .badge {
   display: inline-block;
@@ -187,6 +203,7 @@ header h1 { color: var(--accent); font-size: 1.6rem; margin-bottom: 3px; }
 .badge.up  { background: rgba(76,175,80,.30);  color: var(--green); }
 .badge.dn  { background: rgba(239,83,80,.30);  color: var(--red); }
 .badge.neu { background: rgba(136,136,136,.22); color: var(--sub); }
+
 /* KPI change com fundo */
 .kpi-chg {
   display: inline-block;
@@ -199,6 +216,7 @@ header h1 { color: var(--accent); font-size: 1.6rem; margin-bottom: 3px; }
 .kpi-chg.up  { background: rgba(76,175,80,.30);  color: var(--green); }
 .kpi-chg.dn  { background: rgba(239,83,80,.30);  color: var(--red); }
 .kpi-chg.neu { background: rgba(136,136,136,.20); color: var(--sub); }
+
 /* ── DOMINANCE ── */
 .dom-row    { margin-bottom: 13px; }
 .dom-label  { display: flex; justify-content: space-between; margin-bottom: 5px; font-size: .85rem; font-weight: 600; }
@@ -208,6 +226,7 @@ header h1 { color: var(--accent); font-size: 1.6rem; margin-bottom: 3px; }
 .dom-eth    { background: #627eea; }
 .dom-alts   { background: #888; }
 .dom-footer { margin-top: 12px; font-size: .78rem; color: var(--sub); }
+
 /* ── TOP 20 TABLE ── */
 .tbl-wrap { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; font-size: .83rem; }
@@ -228,10 +247,12 @@ tbody tr:hover td { background: var(--bg3); }
 .coin-sym   { color: var(--sub); font-size: .76rem; margin-left: 5px; }
 .coin-price { font-size: 1rem; font-weight: 700; margin-right: 6px; }
 .coin-chg   { vertical-align: middle; }
+
 /* ── TWO-COL ── */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
 @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
 .two-col .card { margin-bottom: 0; }
+
 /* ── STABLECOINS ── */
 .stable-total { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; }
 .stable-ttl-lbl { color: var(--sub); font-size: .7rem; font-weight: 400; margin-left: 6px; }
@@ -239,6 +260,7 @@ tbody tr:hover td { background: var(--bg3); }
 .stable-row:last-child { border-bottom: none; }
 .stable-name { font-weight: 600; }
 .stable-share { color: var(--sub); font-size: .74rem; margin-left: 5px; }
+
 /* ── DEFI ── */
 .defi-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
 .defi-kpi-item { background: var(--bg3); border-radius: 8px; padding: 12px; text-align: center; }
@@ -248,6 +270,7 @@ tbody tr:hover td { background: var(--bg3); }
 .proto-row:last-child { border-bottom: none; }
 .proto-name { font-weight: 600; }
 .proto-cat { color: var(--sub); font-size: .72rem; margin-left: 5px; }
+
 /* ── ETF LINKS ── */
 .etf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 10px; }
 .etf-card {
@@ -261,8 +284,10 @@ tbody tr:hover td { background: var(--bg3); }
 .etf-icon { font-size: 1.2rem; margin-bottom: 5px; }
 .etf-name { font-weight: 600; font-size: .88rem; }
 .etf-desc { color: var(--sub); font-size: .73rem; margin-top: 2px; }
+
 /* ── CUSTOM HEATMAP ── */
 #custom-heatmap { height: 795px; border-radius: 8px; overflow: hidden; position: relative; }
+
 /* ── Dominância abaixo do heatmap ── */
 #heat-dom { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
 #heat-dom:empty { display: none; }
@@ -273,6 +298,7 @@ tbody tr:hover td { background: var(--bg3); }
 .domchip-pct { font-weight: 800; font-size: .95rem; }
 .domchip-bar { width: 54px; height: 6px; border-radius: 3px; background: var(--border); overflow: hidden; }
 .domchip-bar > i { display: block; height: 100%; border-radius: 3px; }
+
 /* ── 3D PIE ── */
 .pie-scene {
   position: relative;
@@ -293,6 +319,7 @@ tbody tr:hover td { background: var(--bg3); }
   transform: perspective(700px) rotateX(32deg);
   transform-origin: center 62%;
 }
+
 /* ── TABLE RANK BUTTONS ── */
 .tbl-btns { display: flex; gap: 6px; }
 .tbl-btn {
@@ -303,6 +330,7 @@ tbody tr:hover td { background: var(--bg3); }
 }
 .tbl-btn:hover  { opacity: .75; }
 .tbl-btn.active { background: var(--accent); color: #fff; }
+
 /* ── HEATMAP TABS ── */
 .heat-tabs { display: flex; gap: 4px; background: var(--bg3); padding: 4px; border-radius: 12px; border: 1px solid var(--border); }
 .heat-tab, .heat-mode, .treas-tab, .heat-count {
@@ -313,6 +341,7 @@ tbody tr:hover td { background: var(--bg3); }
 }
 .heat-tab:hover, .heat-mode:hover, .treas-tab:hover, .heat-count:hover { color: var(--text); }
 .heat-tab.active, .heat-mode.active, .treas-tab.active, .heat-count.active { background: var(--accent); color: #fff; }
+
 /* ── COIN TABLE ── */
 .coin-logo { width: 32px; height: 32px; border-radius: 50%; vertical-align: middle; margin-right: 8px; object-fit: cover; }
 td.num { color: var(--sub); font-size: .98rem; }
@@ -322,14 +351,17 @@ td.right { text-align: right; }
 .coin-tbl th { padding: 8px 12px; font-size: .9rem; }
 .coin-tbl .coin-name { font-size: 1.2rem; }
 .coin-tbl .coin-sym  { font-size: .98rem; }
+
 /* ── MISC ── */
 .loading { color: var(--sub); font-size: .83rem; padding: 18px 0; text-align: center; }
 .err     { color: var(--red); font-size: .8rem; padding: 10px 0; }
+
 footer {
   text-align: center; color: var(--dim); font-size: .74rem;
   margin-top: 40px; padding-top: 16px;
   border-top: 1px solid var(--border);
 }
+
 /* ── ANIMAÇÕES ── */
 /* 1) Coroa do Bitcoin no mapa de calor (aparece + brilha no hover) */
 .heat-btc-cell .btc-crown {
@@ -354,6 +386,7 @@ footer {
   0%,100% { opacity: 0; transform: scale(.3); }
   50%     { opacity: 1; transform: scale(1); }
 }
+
 /* 3) Fatias das pizzas se destacam no hover (dominância + stablecoins) */
 .dp-slice {
   cursor: pointer; transform-box: view-box; transform-origin: 450px 288px;
@@ -365,10 +398,12 @@ footer {
   transition: transform .18s ease, filter .18s ease;
 }
 .stable-slice:hover { transform: scale(1.05); filter: brightness(1.12); }
+
 /* ── COLLAPSE (recolher seções) ── */
 .chev { display: inline-block; transition: transform .2s ease; color: var(--sub); font-size: .78em; }
 .card.collapsed .chev { transform: rotate(-90deg); }
 .card.collapsed > .card-body { display: none; }
+
 /* ── BETA badge (discreto, topo) ── */
 .beta-bar { display: flex; justify-content: flex-end; align-items: center; margin-bottom: 10px; }
 .beta-badge {
@@ -377,6 +412,7 @@ footer {
   font-size: .66rem; font-weight: 800; letter-spacing: 1.5px;
   padding: 4px 11px; border-radius: 999px; cursor: default;
 }
+
 /* ── RESPONSIVO (celular / tablet) ── */
 @media (max-width: 760px) {
   body { padding: 14px 11px 48px; }
@@ -404,6 +440,7 @@ footer {
 .badge.neu,.kpi-chg.neu{ background:rgba(255,255,255,.07); color:var(--sub); }
 .tbl-btn.active,.heat-tab.active,.heat-mode.active,.treas-tab.active,.heat-count.active{ color:#1a1206; }
 .domchip{ -webkit-backdrop-filter:saturate(140%) blur(10px); backdrop-filter:saturate(140%) blur(10px); }
+
 /* ── MVRV ── */
 #mvrv-wrap{ position:relative; }
 #mvrv-chart svg{ width:100%; height:auto; display:block; }
@@ -413,6 +450,7 @@ footer {
   line-height:1.55; color:#fff; opacity:0; transition:opacity .12s; z-index:6; white-space:nowrap;
   -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); box-shadow:0 8px 22px -6px rgba(0,0,0,.6); }
 body.light #mvrv-tip{ background:rgba(255,255,255,.96); color:#1b1b24; }
+
 /* ── Bitcoin na mesma data (máquina do tempo) ── */
 .td-pick{ display:flex; align-items:center; gap:8px; font-size:.82rem; color:var(--sub); }
 .td-input{ background:var(--bg3); color:var(--text); border:1px solid var(--border); border-radius:8px; padding:5px 9px; font-family:inherit; font-size:.84rem; color-scheme:dark; cursor:pointer; }
@@ -423,12 +461,14 @@ body.light .td-input{ color-scheme:light; }
 .td-date{ color:var(--sub); font-size:.8rem; }
 .td-px{ font-weight:700; font-size:1.05rem; text-align:right; }
 .td-grow{ font-weight:700; font-size:.8rem; text-align:right; min-width:78px; padding:2px 9px; border-radius:20px; }
-.td-grow\.up{ color:var(--green); background:rgba(75,226,168,.12); }
-.td-grow\.dn{ color:var(--red); background:rgba(255,107,129,.12); }
-.td-grow\.now{ color:var(--accent); background:rgba(255,171,67,.15); }
+.td-grow.up{ color:var(--green); background:rgba(75,226,168,.12); }
+.td-grow.dn{ color:var(--red); background:rgba(255,107,129,.12); }
+.td-grow.now{ color:var(--accent); background:rgba(255,171,67,.15); }
 .td-empty .td-px{ color:var(--dim); }
 @media(max-width:460px){ .td-row{ grid-template-columns:44px 1fr auto; gap:8px; padding:8px 10px; } .td-date{ display:none; } }
+
 /* HEATMAP = mesmo vidro (glass) das demais caixas — padrão .card */
+
 /* HEADER FLUTUANTE (vidro) */
 #site-header{
   position:sticky; top:10px; z-index:60;
@@ -478,6 +518,7 @@ html{ scroll-behavior:smooth; }
   .hdr-nav::-webkit-scrollbar{ display:none; }
   .hdr-nav a{ font-size:.76rem; padding:5px 9px; }
 }
+
 /* ── MAIORES ALTAS & QUEDAS (24h) ── */
 .mv-col-title{ font-size:.95rem; font-weight:800; margin-bottom:10px; letter-spacing:.3px; }
 .mv-row{ display:flex; align-items:center; gap:12px; padding:10px 12px; border-radius:12px; }
@@ -486,9 +527,10 @@ html{ scroll-behavior:smooth; }
 .mv-name{ font-weight:700; font-size:.95rem; line-height:1.15; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .mv-sym{ color:var(--sub); font-size:.74rem; text-transform:uppercase; letter-spacing:.4px; }
 .mv-px{ margin-left:auto; font-weight:700; font-size:.95rem; font-family:'IBM Plex Mono',ui-monospace,monospace; font-variant-numeric:tabular-nums; white-space:nowrap; }
+
 /* ── BTC vs GIGANTES ── */
 .gt-row{ display:flex; align-items:center; gap:12px; padding:9px 10px; border-radius:12px; margin-bottom:4px; }
-.gt-row\.gt-btc{ background:rgba(247,147,26,.09); border:1px solid rgba(247,147,26,.42); box-shadow:0 0 22px -6px rgba(247,147,26,.45); }
+.gt-row.gt-btc{ background:rgba(247,147,26,.09); border:1px solid rgba(247,147,26,.42); box-shadow:0 0 22px -6px rgba(247,147,26,.45); }
 .gt-rank{ color:var(--sub); font-size:.85rem; min-width:24px; text-align:center; font-family:'IBM Plex Mono',ui-monospace,monospace; font-weight:700; }
 .gt-ico{ width:34px; height:34px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:1.05rem; font-weight:800; color:#fff; }
 .gt-name{ width:158px; flex-shrink:0; overflow:hidden; }
@@ -507,6 +549,7 @@ html{ scroll-behavior:smooth; }
   .gt-val{ min-width:58px; font-size:.78rem }
   .heat-tabs{ flex-wrap:wrap }   /* abas do mapa não estouram a tela no celular */
 }
+
 /* ── COUNTDOWN DO HALVING ── */
 .hv-clock{ display:flex; justify-content:center; align-items:stretch; gap:14px; flex-wrap:wrap; margin:10px 0 26px; }
 .hv-box{ background:linear-gradient(160deg,rgba(247,147,26,.14),rgba(247,147,26,.04)); border:1px solid rgba(247,147,26,.45); border-radius:20px;
@@ -521,6 +564,7 @@ html{ scroll-behavior:smooth; }
 .hv-tile-v{ font-weight:800; font-size:1.15rem; font-family:'IBM Plex Mono',ui-monospace,monospace; font-variant-numeric:tabular-nums; }
 @media(max-width:760px){ .hv-box{ min-width:104px; padding:18px 12px 12px } .hv-num{ font-size:3.1rem } .hv-sep{ font-size:2.1rem; padding-bottom:16px } }
 @media(max-width:460px){ .hv-clock{ gap:8px } .hv-box{ min-width:66px; padding:13px 7px 9px } .hv-num{ font-size:2rem } .hv-lbl{ font-size:.6rem; letter-spacing:1.5px } .hv-sep{ display:none } }
+
 /* ── SATS POR REAL / DÓLAR ── */
 .sats-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:14px; }
 .sats-tile{ background:rgba(247,147,26,.08); border:1px solid rgba(247,147,26,.32); border-radius:12px; padding:13px 12px; text-align:center; }
@@ -529,6 +573,7 @@ html{ scroll-behavior:smooth; }
 .sats-v small{ font-size:.7em; color:var(--sub); font-weight:600; margin-left:3px; letter-spacing:.5px; }
 .sats-foot{ grid-column:1 / -1; text-align:center; color:var(--dim); font-size:.68rem; }
 @media(max-width:460px){ .sats-grid{ grid-template-columns:1fr } }
+
 /* ── MODO TV ── */
 #tv-overlay{ position:fixed; left:50%; bottom:16px; transform:translateX(-50%); z-index:200;
   display:flex; align-items:center; gap:11px; padding:10px 18px 14px; border-radius:999px;
@@ -553,6 +598,8 @@ html{ scroll-behavior:smooth; }
 </style>
 </head>
 <body>
+
+
 <header id="site-header">
   <div class="hdr-brand">
     <div class="hdr-logo">₿</div>
@@ -562,21 +609,21 @@ html{ scroll-behavior:smooth; }
     </div>
   </div>
   <nav class="hdr-nav">
-    <a href="https://mercado.bitnada.com.br/#sec-heatmap" data-i18n="nav_heat">🔥 Mapa</a>
-    <a href="https://mercado.bitnada.com.br/#sec-top" data-i18n="nav_top">🏆 Mercado</a>
-    <a href="https://mercado.bitnada.com.br/#sec-movers" data-i18n="nav_movers">🚀 Altas &amp; Quedas</a>
-    <a href="https://mercado.bitnada.com.br/#sec-dom" data-i18n="nav_dom">📊 Dominância</a>
-    <a href="https://mercado.bitnada.com.br/#sec-dollar" data-i18n="nav_dollar">💵 Dólar</a>
-    <a href="https://mercado.bitnada.com.br/#sec-fg" data-i18n="nav_fg">😱 Medo &amp; Ganância</a>
-    <a href="https://mercado.bitnada.com.br/#sec-stable" data-i18n="nav_stable">💵 Stablecoins</a>
-    <a href="https://mercado.bitnada.com.br/#sec-mvrv" data-i18n="nav_mvrv">📐 MVRV</a>
-    <a href="https://mercado.bitnada.com.br/#sec-data" data-i18n="nav_data">📅 Histórico</a>
-    <a href="https://mercado.bitnada.com.br/#sec-reserva" data-i18n="nav_reserva">🏦 Reserva</a>
-    <a href="https://mercado.bitnada.com.br/#sec-rede" data-i18n="nav_rede">₿ Rede</a>
-    <a href="https://mercado.bitnada.com.br/#sec-halving" data-i18n="nav_halving">⏳ Halving</a>
-    <a href="https://mercado.bitnada.com.br/#sec-giants" data-i18n="nav_giants">🥇 Gigantes</a>
-    <a href="https://mercado.bitnada.com.br/#sec-gas" data-i18n="nav_gas">⛽ Gás</a>
-    <a href="https://mercado.bitnada.com.br/#sec-etf" data-i18n="nav_etf">📈 ETF</a>
+    <a href="#sec-heatmap" data-i18n="nav_heat">🔥 Mapa</a>
+    <a href="#sec-top" data-i18n="nav_top">🏆 Mercado</a>
+    <a href="#sec-movers" data-i18n="nav_movers">🚀 Altas &amp; Quedas</a>
+    <a href="#sec-dom" data-i18n="nav_dom">📊 Dominância</a>
+    <a href="#sec-dollar" data-i18n="nav_dollar">💵 Dólar</a>
+    <a href="#sec-fg" data-i18n="nav_fg">😱 Medo &amp; Ganância</a>
+    <a href="#sec-stable" data-i18n="nav_stable">💵 Stablecoins</a>
+    <a href="#sec-mvrv" data-i18n="nav_mvrv">📐 MVRV</a>
+    <a href="#sec-data" data-i18n="nav_data">📅 Histórico</a>
+    <a href="#sec-reserva" data-i18n="nav_reserva">🏦 Reserva</a>
+    <a href="#sec-rede" data-i18n="nav_rede">₿ Rede</a>
+    <a href="#sec-halving" data-i18n="nav_halving">⏳ Halving</a>
+    <a href="#sec-giants" data-i18n="nav_giants">🥇 Gigantes</a>
+    <a href="#sec-gas" data-i18n="nav_gas">⛽ Gás</a>
+    <a href="#sec-etf" data-i18n="nav_etf">📈 ETF</a>
   </nav>
   <div class="hdr-ctrl">
     <button class="btn" id="btn-tv" title="Modo TV — passeia pelas seções sozinho (Esc sai)">📺 TV</button>
@@ -584,6 +631,7 @@ html{ scroll-behavior:smooth; }
     <button class="btn" id="btn-theme">☀️ Claro</button>
   </div>
 </header>
+
 <!-- KPI Cards -->
 <div class="kpi-grid">
   <!-- 1) Bitcoin — degradê laranja→laranja claro; ícone, variação inline, supply, bloco -->
@@ -598,7 +646,7 @@ html{ scroll-behavior:smooth; }
       <div class="kpi-block" id="kpi-btc-block">—</div>
     </div>
   </div>
-  <!-- 2) Ethereum — degradê azul; ícone, variação inline, gás (gwei + \~USD) -->
+  <!-- 2) Ethereum — degradê azul; ícone, variação inline, gás (gwei + ~USD) -->
   <div class="kpi-card kpi-grad kpi-eth">
     <div class="kpi-label"><img class="kpi-coin" id="kpi-eth-ico" alt="">Ethereum (ETH)</div>
     <div class="kpi-priceline">
@@ -636,7 +684,7 @@ html{ scroll-behavior:smooth; }
     </div>
   </div>
   <!-- 5) Banner PROHash (placeholder: degradê verde + cupom; arte definitiva depois) -->
-  <a class="kpi-card kpi-grad kpi-prohash" href="https://prohash.com.br/" target="_blank" rel="noopener" title="PROHash — 15% OFF cupom COMCRIPTO">
+  <a class="kpi-card kpi-grad kpi-prohash" href="https://prohash.com.br" target="_blank" rel="noopener" title="PROHash — 15% OFF cupom COMCRIPTO">
     <div class="kpi-prohash-in">
       <div class="kpi-prohash-logo">PRO<span>Hash</span></div>
       <div class="kpi-prohash-off">15% OFF</div>
@@ -644,6 +692,7 @@ html{ scroll-behavior:smooth; }
     </div>
   </a>
 </div>
+
 <!-- Heatmap (Moedas / Corretoras) -->
 <div id="sec-heatmap" class="card" style="padding:10px">
   <div style="display:flex;align-items:center;gap:10px;padding:4px 6px 10px;flex-wrap:wrap">
@@ -667,6 +716,7 @@ html{ scroll-behavior:smooth; }
   <div id="custom-heatmap"><div class="loading">Carregando mapa de calor...</div></div>
   <div id="heat-dom"></div>
 </div>
+
 <!-- Top Rankings -->
 <div id="sec-top" class="card" style="max-width:66%;margin-left:auto;margin-right:auto">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px">
@@ -680,11 +730,13 @@ html{ scroll-behavior:smooth; }
   </div>
   <div class="tbl-wrap" id="top20-section"><div class="loading">Carregando...</div></div>
 </div>
+
 <!-- Maiores Altas & Quedas (24h) -->
 <div id="sec-movers" class="card" style="max-width:66%;margin-left:auto;margin-right:auto">
   <div class="card-title" data-i18n="movers_title">🚀 Maiores Altas &amp; Quedas (24h)</div>
   <div id="movers-section"><div class="loading" data-i18n="loading">Carregando...</div></div>
 </div>
+
 <!-- Dominance + Volume -->
 <div id="sec-dom" class="card">
   <div class="card-title" data-i18n="dom">📊 Dominância de Mercado &amp; Volumes</div>
@@ -698,6 +750,7 @@ html{ scroll-behavior:smooth; }
     </div>
   </div>
 </div>
+
 <!-- Dólar + Fear & Greed -->
 <div class="two-col">
   <div id="sec-dollar" class="card">
@@ -709,11 +762,13 @@ html{ scroll-behavior:smooth; }
     <div id="fg-section"><div class="loading">Carregando...</div></div>
   </div>
 </div>
+
 <!-- Stablecoins -->
 <div id="sec-stable" class="card">
   <div class="card-title" data-i18n="stable_title">💵 Stablecoins — Top 10</div>
   <div id="stable-section"><div class="loading">Carregando...</div></div>
 </div>
+
 <!-- Bitcoin MVRV -->
 <div id="sec-mvrv" class="card">
   <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:4px">
@@ -725,6 +780,7 @@ html{ scroll-behavior:smooth; }
     <div id="mvrv-tip"></div>
   </div>
 </div>
+
 <!-- Bitcoin na mesma data (máquina do tempo) -->
 <div id="sec-data" class="card" style="max-width:66%;margin-left:auto;margin-right:auto">
   <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:4px">
@@ -735,6 +791,7 @@ html{ scroll-behavior:smooth; }
   <div style="font-size:.8rem;color:var(--sub);margin:0 0 12px" data-i18n="td_cap">Preço do BTC nesta data, ano a ano — e quanto valorizou até hoje.</div>
   <div id="td-list"><div class="loading">Carregando...</div></div>
 </div>
+
 <!-- Bitcoin Treasuries -->
 <div id="sec-reserva" class="card" style="max-width:66%;margin-left:auto;margin-right:auto">
   <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:6px">
@@ -746,26 +803,31 @@ html{ scroll-behavior:smooth; }
   </div>
   <div id="treasuries-section"><div class="loading">Carregando...</div></div>
 </div>
+
 <!-- Rede Bitcoin (blockchain stats) -->
 <div id="sec-rede" class="card" style="max-width:66%;margin-left:auto;margin-right:auto">
   <div class="card-title" data-i18n="chain">₿ Rede Bitcoin</div>
   <div id="chainstats-section"><div class="loading">Carregando...</div></div>
 </div>
+
 <!-- Countdown do Halving -->
 <div id="sec-halving" class="card" style="max-width:66%;margin-left:auto;margin-right:auto">
   <div class="card-title" data-i18n="halving_title">⏳ Countdown do Halving</div>
   <div id="halving-section"><div class="loading" data-i18n="loading">Carregando...</div></div>
 </div>
+
 <!-- BTC vs Gigantes -->
 <div id="sec-giants" class="card" style="max-width:66%;margin-left:auto;margin-right:auto">
   <div class="card-title" data-i18n="giants_title">🥇 BTC vs Gigantes</div>
   <div id="giants-section"><div class="loading" data-i18n="loading">Carregando...</div></div>
 </div>
+
 <!-- Gás das Redes EVM -->
 <div id="sec-gas" class="card" style="max-width:66%;margin-left:auto;margin-right:auto">
   <div class="card-title" data-i18n="gas">⛽ Gás das Redes EVM</div>
   <div id="gas-section"><div class="loading">Carregando...</div></div>
 </div>
+
 <!-- ETF Links -->
 <div id="sec-etf" class="card">
   <div class="card-title" data-i18n="etf">📈 ETF Bitcoin — Acesso Rápido</div>
@@ -802,10 +864,13 @@ html{ scroll-behavior:smooth; }
     </a>
   </div>
 </div>
+
 <footer data-i18n="footer">
   Dados: CoinGecko · CoinPaprika · Alternative.me · DefiLlama · AwesomeAPI · TradingView · Yahoo Finance
 </footer>
+
 <!-- topo: controles movidos para o header fixo no topo -->
+
 <script>
 // ── CONFIG ─────────────────────────────────────────────────────────────────
 let SNAP     = null;     // snapshot do nosso backend (data.json) — fonte única de dados
@@ -818,6 +883,7 @@ let heatView  = 'coins'; // 'coins' | 'exch'
 let exchMode  = 'futures'; // 'spot' | 'futures' (corretoras)
 let heatLimit = 0;       // 0 = todas | 15 | 10 (qtd no mapa de moedas)
 let treasCoin = 'bitcoin'; // 'bitcoin' | 'ethereum' (treasuries)
+
 const STABLECOINS = new Set([
   // USD-pegged
   'usdt','usdc','dai','busd','tusd','usds','frax','usde','pyusd','usdg','usd1',
@@ -842,6 +908,7 @@ function nf(n, min = 0, max) {
   if (n == null || isNaN(n)) return '—';
   return Number(n).toLocaleString(LOCALE, { minimumFractionDigits: min, maximumFractionDigits: (max == null ? min : max) });
 }
+
 function fmtLarge(n) {
   if (n == null || isNaN(n)) return '—';
   if (n >= 1e12) return '$' + nf(n / 1e12, 2) + 'T';
@@ -849,6 +916,7 @@ function fmtLarge(n) {
   if (n >= 1e6)  return '$' + nf(n / 1e6, 2) + 'M';
   return '$' + nf(n, 0);
 }
+
 // Abreviação de quantidade (supply), sem cifrão: 19,73 M · 1,02 B
 function fmtSupply(n) {
   if (n == null || isNaN(n)) return '—';
@@ -858,6 +926,7 @@ function fmtSupply(n) {
   if (n >= 1e3)  return nf(n / 1e3, 2) + ' K';
   return nf(n, 0);
 }
+
 function fmtPrice(n) {
   if (n == null || isNaN(n)) return '—';
   if (n >= 10000) return '$' + nf(n, 0);
@@ -865,18 +934,22 @@ function fmtPrice(n) {
   if (n >= 0.01)  return '$' + nf(n, 4);
   return '$' + nf(n, 6);
 }
+
 function fmtPct(n) {
   if (n == null || isNaN(n)) return '—';
   return (n >= 0 ? '+' : '') + nf(n, 2) + '%';
 }
+
 function cls(n) {
   if (n == null || isNaN(n)) return 'neu';
   return n >= 0 ? 'up' : 'dn';
 }
+
 function fmtBRL(n) {
   if (!n) return '—';
   return 'R$ ' + nf(parseFloat(n), 2);
 }
+
 // ── i18n (PT-BR / EN) ─────────────────────────────────────────────────────────
 const I18N = {
   'pt-BR': {
@@ -978,6 +1051,7 @@ function applyI18n() {
     else el.textContent = txt;
   });
 }
+
 // ── HTTP HELPER ─────────────────────────────────────────────────────────────
 async function get(url, timeoutMs = 12000) {
   const ctrl = new AbortController();
@@ -993,16 +1067,21 @@ async function get(url, timeoutMs = 12000) {
     clearTimeout(tid);
   }
 }
+
 function el(id) { return document.getElementById(id); }
+
 function set(id, txt) {
   const e = el(id);
   if (e) e.textContent = txt;
 }
+
 function setHTML(id, html) {
   const e = el(id);
   if (e) e.innerHTML = html;
 }
+
 // ── HEATMAP ──────────────────────────────────────────────────────────────────
+
 function heatmapBg(pct) {
   const v = Math.abs(pct || 0);
   if (v < 0.01) return '#a8a8a8';   // 0% = cinza claro
@@ -1016,37 +1095,45 @@ function heatmapBg(pct) {
     return '#AA2121';                // 10,01% +
   }
 }
+
 // Regra PRÓPRIA das stablecoins: cor pelo PREÇO vs $1 (não pela variação do dia)
 function stableBg(price) {
   const p = Math.round((price || 0) * 10000) / 10000;  // 4 casas, como é exibido
   if (p === 1) return '#a8a8a8';                        // exatamente 1 USD = cinza
   return p < 1 ? '#ED7171' : '#7EC17E';                 // abaixo = vermelho / acima = verde
 }
+
 function layoutTreemap(items, W, H) {
   const results = [];
+
   function worstAspect(row, rowArea, len) {
     const stripW = rowArea / len;
-    return row\.reduce((m, item) => {
+    return row.reduce((m, item) => {
       const d = item.area / stripW;
       return Math.max(m, Math.max(stripW / d, d / stripW));
     }, 0);
   }
+
   function layout(items, x, y, w, h) {
     if (!items.length) return;
     if (items.length === 1) { results.push({ ...items[0], x, y, w, h }); return; }
+
     const len = Math.min(w, h);
     let row = [], rowArea = 0, prevWorst = Infinity, splitIdx = 0;
+
     for (let i = 0; i < items.length; i++) {
       const candidate = [...row, items[i]];
       const candArea  = rowArea + items[i].area;
       const w1 = worstAspect(candidate, candArea, len);
-      if (w1 > prevWorst && row\.length > 0) break;
+      if (w1 > prevWorst && row.length > 0) break;
       row = candidate;
       rowArea = candArea;
       prevWorst = w1;
       splitIdx = i + 1;
     }
+
     const stripW = rowArea / len;
+
     if (w <= h) {
       // horizontal strip at top
       let ox = x;
@@ -1067,9 +1154,11 @@ function layoutTreemap(items, W, H) {
       layout(items.slice(splitIdx), x + stripW, y, w - stripW, h);
     }
   }
+
   layout(items, 0, 0, W, H);
   return results;
 }
+
 function showHmTooltip(div) {
   const d = div.dataset;
   const tt = el('hm-tooltip');
@@ -1088,28 +1177,32 @@ function showHmTooltip(div) {
   tt.style.opacity = '1';
   tt.style.pointerEvents = 'auto';
 }
+
 function hideHmTooltip() {
   const tt = el('hm-tooltip');
   if (tt) { tt.style.opacity = '0'; tt.style.pointerEvents = 'none'; }
 }
+
 function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
 function renderActiveHeat() {
   if (heatView === 'coins') renderHeatmap();
   else renderExchanges();
 }
+
 // Dominância logo abaixo do heatmap: BTC/ETH nas Moedas; 2 maiores stablecoins na aba Stablecoins
 function renderHeatDominance() {
   const box = el('heat-dom');
   if (!box) return;
   if (heatView === 'exch') { box.innerHTML = ''; return; }   // corretoras: não se aplica
   const g = SNAP && SNAP.global && SNAP.global.data;
-  const chip = (img, sym, pct, color) => \`
+  const chip = (img, sym, pct, color) => `
     <div class="domchip">
-      ${img ? \`<img src="${esc(img)}" onerror="this.style.display='none'">\` : ''}
+      ${img ? `<img src="${esc(img)}" onerror="this.style.display='none'">` : ''}
       <span class="domchip-sym">${sym}</span>
       <span class="domchip-pct" style="color:${color}">${nf(pct, 2)}%</span>
       <span class="domchip-bar"><i style="width:${Math.min(100, pct).toFixed(1)}%;background:${color}"></i></span>
-    </div>\`;
+    </div>`;
   let chips = '';
   if (heatLimit === 'stable') {
     const total = g && g.total_market_cap && g.total_market_cap.usd;
@@ -1125,29 +1218,33 @@ function renderHeatDominance() {
     chips = chip(btc && btc.image, 'BTC', g.market_cap_percentage.btc ?? 0, '#f7931a')
           + chip(eth && eth.image, 'ETH', g.market_cap_percentage.eth ?? 0, '#627eea');
   }
-  box.innerHTML = \`<span class="dom-lead">${t('dominance')}</span>${chips}\`;
+  box.innerHTML = `<span class="dom-lead">${t('dominance')}</span>${chips}`;
 }
+
 function renderHeatmap() {
   if (heatView !== 'coins') return;
   const container = el('custom-heatmap');
   if (!container) return;
   const isStable = heatLimit === 'stable';
   const src = isStable ? allCoins.filter(c => STABLECOINS.has(c.symbol.toLowerCase())) : heatCoins;
-  if (!src.length) { setHTML('custom-heatmap', \`<div class="loading">${t('loading')}</div>\`); return; }
+  if (!src.length) { setHTML('custom-heatmap', `<div class="loading">${t('loading')}</div>`); return; }
   const coins = (typeof heatLimit === 'number' && heatLimit) ? src.slice(0, heatLimit) : src;
   const W = container.clientWidth || 900;
   const H = W < 520 ? 560 : 795;
   const GAP = 2;
-  // Peso^0.72 comprime o BTC para \~45-50% da área total
+
+  // Peso^0.72 comprime o BTC para ~45-50% da área total
   const mcapPow = coins.map(c => Math.pow(c.market_cap || 1, 0.72));
-  const totalPow = mcapPow\.reduce((s, v) => s + v, 0);
+  const totalPow = mcapPow.reduce((s, v) => s + v, 0);
   const items = coins.map((c, i) => ({
     coin: c,
     area: (mcapPow[i] / totalPow) * W * H
   }));
+
   const rects = layoutTreemap(items, W, H);
+
   // Tirinha inferior — agora é o ÚNICO hyperlink (abre a moeda no TradingView)
-  const tooltipBar = \`<a id="hm-tooltip" href="#" target="_blank" rel="noopener" style="position:absolute;bottom:0;left:0;right:0;background:rgba(8,8,8,.94);backdrop-filter:blur(8px);padding:10px 18px;display:flex;align-items:center;gap:16px;font-size:.83rem;border-radius:0 0 8px 8px;transition:opacity .18s;opacity:0;pointer-events:none;z-index:10;border-top:1px solid #2a2a2a;text-decoration:none;cursor:pointer">
+  const tooltipBar = `<a id="hm-tooltip" href="#" target="_blank" rel="noopener" style="position:absolute;bottom:0;left:0;right:0;background:rgba(8,8,8,.94);backdrop-filter:blur(8px);padding:10px 18px;display:flex;align-items:center;gap:16px;font-size:.83rem;border-radius:0 0 8px 8px;transition:opacity .18s;opacity:0;pointer-events:none;z-index:10;border-top:1px solid #2a2a2a;text-decoration:none;cursor:pointer">
     <img id="hm-t-img" style="width:32px;height:32px;border-radius:50%;object-fit:cover;flex-shrink:0" src="" alt="" onerror="this.style.display='none'"/>
     <span id="hm-t-sym"   style="font-weight:800;font-size:1.1rem;color:#fff;min-width:52px"></span>
     <span id="hm-t-name"  style="color:#999;font-size:.8rem"></span>
@@ -1156,10 +1253,11 @@ function renderHeatmap() {
     <span id="hm-t-mcap"  style="color:#666;font-size:.77rem"></span>
     <span id="hm-t-vol"   style="color:#666;font-size:.77rem"></span>
     <span style="margin-left:auto;color:#777;font-size:1rem">↗</span>
-  </a>\`;
+  </a>`;
+
   // Coroa do rei (👑) — só aparece e brilha ao passar o mouse na célula do BTC
-  const CROWN = \`<div class="btc-crown" aria-hidden="true">
-    <svg class="crown-svg" viewBox="0 0 120 96" xmlns="http://www\.w3.org/2000/svg">
+  const CROWN = `<div class="btc-crown" aria-hidden="true">
+    <svg class="crown-svg" viewBox="0 0 120 96" xmlns="http://www.w3.org/2000/svg">
       <defs><linearGradient id="btc-crown-g" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0%" stop-color="#fff2c2"/><stop offset="45%" stop-color="#ffcf5c"/><stop offset="100%" stop-color="#f7931a"/>
       </linearGradient></defs>
@@ -1169,7 +1267,8 @@ function renderHeatmap() {
       <circle cx="36" cy="83" r="3.4" fill="#b76b06"/><circle cx="60" cy="83" r="3.4" fill="#b76b06"/><circle cx="84" cy="83" r="3.4" fill="#b76b06"/>
     </svg>
     <span class="crown-spark s1">✦</span><span class="crown-spark s2">✦</span>
-  </div>\`;
+  </div>`;
+
   const cells = rects.map(r => {
     const c   = r.coin;
     const isBtc = c.symbol.toLowerCase() === 'btc';
@@ -1178,59 +1277,71 @@ function renderHeatmap() {
     const cw  = r.w - GAP;
     const ch  = r.h - GAP;
     const area = cw * ch;
+
     // Layout Coin360: TICKER grande · preço médio · variação pequena
     const showSym   = cw > 22  && ch > 14;
     const showPrice = cw > 44  && ch > 42;
     const showPct   = cw > 34  && ch > 32;
+
     // Ticker é o maior elemento — escala com o tamanho da célula
     const symSz   = Math.min(180, Math.max(8,  Math.sqrt(area) * 0.22)).toFixed(1);
     const priceSz = Math.min(60,  Math.max(8,  Math.sqrt(area) * 0.11)).toFixed(1);
     const pctSz   = Math.min(16,  Math.max(5,  Math.sqrt(area) * 0.054)).toFixed(1);
-    const tvUrl = \`https://www\.tradingview\.com/symbols/${esc(c.symbol.toUpperCase())}USD/\`;
-    const inner = \`
-      ${showSym   ? \`<div style="color:#fff;font-weight:500;font-size:${symSz}px;letter-spacing:.5px;line-height:1;text-align:center">${c.symbol.toUpperCase()}</div>\` : ''}
-      ${showPrice ? \`<div style="color:rgba(255,255,255,.82);font-weight:600;font-size:${priceSz}px;margin-top:4px;line-height:1">${fmtPrice(c.current_price)}</div>\` : ''}
-      ${showPct   ? \`<div style="color:rgba(255,255,255,.70);font-weight:500;font-size:${pctSz}px;margin-top:2px">${fmtPct(pct)}</div>\` : ''}
-    \`;
+
+    const tvUrl = `https://www.tradingview.com/symbols/${esc(c.symbol.toUpperCase())}USD/`;
+
+    const inner = `
+      ${showSym   ? `<div style="color:#fff;font-weight:500;font-size:${symSz}px;letter-spacing:.5px;line-height:1;text-align:center">${c.symbol.toUpperCase()}</div>` : ''}
+      ${showPrice ? `<div style="color:rgba(255,255,255,.82);font-weight:600;font-size:${priceSz}px;margin-top:4px;line-height:1">${fmtPrice(c.current_price)}</div>` : ''}
+      ${showPct   ? `<div style="color:rgba(255,255,255,.70);font-weight:500;font-size:${pctSz}px;margin-top:2px">${fmtPct(pct)}</div>` : ''}
+    `;
+
     // Célula NÃO é mais link; só dispara o tooltip e escurece no hover
-    return \`<div${isBtc ? ' class="heat-btc-cell"' : ''}
-      style="position:absolute;left:${r.x.toFixed(1)}px;top:${r.y.toFixed(1)}px;width:${cw\.toFixed(1)}px;height:${ch.toFixed(1)}px;background:${bg};display:flex;flex-direction:column;justify-content:center;align-items:center;border-radius:3px;overflow:hidden;transition:filter .12s"
+    return `<div${isBtc ? ' class="heat-btc-cell"' : ''}
+      style="position:absolute;left:${r.x.toFixed(1)}px;top:${r.y.toFixed(1)}px;width:${cw.toFixed(1)}px;height:${ch.toFixed(1)}px;background:${bg};display:flex;flex-direction:column;justify-content:center;align-items:center;border-radius:3px;overflow:hidden;transition:filter .12s"
       data-sym="${esc(c.symbol.toUpperCase())}" data-name="${esc(c.name)}" data-price="${esc(fmtPrice(c.current_price))}" data-mcap="${esc(fmtLarge(c.market_cap))}" data-vol="${esc(fmtLarge(c.total_volume))}" data-pct="${esc(fmtPct(pct))}" data-pctcls="${pct >= 0 ? 'up' : 'dn'}" data-img="${esc(c.image || '')}" data-tv="${tvUrl}"
       onmouseover="showHmTooltip(this);this.style.filter='brightness(0.82)'"
       onmouseout="this.style.filter=''"
-    >${inner}${isBtc ? CROWN : ''}</div>\`;
+    >${inner}${isBtc ? CROWN : ''}</div>`;
   }).join('');
-  setHTML('custom-heatmap', \`<div style="position:relative;height:${H}px" onmouseleave="hideHmTooltip()">${cells}${tooltipBar}</div>\`);
+
+  setHTML('custom-heatmap', `<div style="position:relative;height:${H}px" onmouseleave="hideHmTooltip()">${cells}${tooltipBar}</div>`);
   renderHeatDominance();
 }
+
 // ── DOMINANCE PIE ────────────────────────────────────────────────────────────
+
 function renderDominancePie(btcD, ethD, altD, cap, capC, activeCoins) {
   function polar(cx, cy, r, deg) {
     const a = (deg - 90) * Math.PI / 180;
     return { x: cx + r * Math.cos(a), y: cy + r * Math.sin(a) };
   }
-  // Annular sector. \`extra\` injects valid child markup (e.g. an <animate>)
+
+  // Annular sector. `extra` injects valid child markup (e.g. an <animate>)
   // INSIDE the <path> element, so no stray/empty paths are ever emitted.
   function donutSector(cx, cy, ro, ri, startDeg, endDeg, fill, extra) {
     const large = (endDeg - startDeg > 180) ? 1 : 0;
     const o1 = polar(cx, cy, ro, startDeg), o2 = polar(cx, cy, ro, endDeg);
     const i2 = polar(cx, cy, ri, endDeg),   i1 = polar(cx, cy, ri, startDeg);
-    const d = \`M${o1.x.toFixed(1)},${o1.y.toFixed(1)} A${ro},${ro} 0 ${large} 1 ${o2.x.toFixed(1)},${o2.y.toFixed(1)} L${i2.x.toFixed(1)},${i2.y.toFixed(1)} A${ri},${ri} 0 ${large} 0 ${i1.x.toFixed(1)},${i1.y.toFixed(1)} Z\`;
+    const d = `M${o1.x.toFixed(1)},${o1.y.toFixed(1)} A${ro},${ro} 0 ${large} 1 ${o2.x.toFixed(1)},${o2.y.toFixed(1)} L${i2.x.toFixed(1)},${i2.y.toFixed(1)} A${ri},${ri} 0 ${large} 0 ${i1.x.toFixed(1)},${i1.y.toFixed(1)} Z`;
     return extra
-      ? \`<path d="${d}" fill="${fill}">${extra}</path>\`
-      : \`<path d="${d}" fill="${fill}"/>\`;
+      ? `<path d="${d}" fill="${fill}">${extra}</path>`
+      : `<path d="${d}" fill="${fill}"/>`;
   }
+
   // Outer-edge arc stroke path (used for the bright rim-light highlight).
   function arcStroke(cx, cy, r, startDeg, endDeg) {
     const large = (endDeg - startDeg > 180) ? 1 : 0;
     const p1 = polar(cx, cy, r, startDeg), p2 = polar(cx, cy, r, endDeg);
-    return \`M${p1.x.toFixed(1)},${p1.y.toFixed(1)} A${r},${r} 0 ${large} 1 ${p2.x.toFixed(1)},${p2.y.toFixed(1)}\`;
+    return `M${p1.x.toFixed(1)},${p1.y.toFixed(1)} A${r},${r} 0 ${large} 1 ${p2.x.toFixed(1)},${p2.y.toFixed(1)}`;
   }
+
   const cx = 450, cy = 288, outerR = 160, innerR = 82;
   const midR = (outerR + innerR) / 2;
-  const band = outerR - innerR;            // \~78px commanding ring band
+  const band = outerR - innerR;            // ~78px commanding ring band
   const midCirc = 2 * Math.PI * midR;      // for the stroke-dash reveal
-  const defs = \`<defs>
+
+  const defs = `<defs>
     <linearGradient id="dp-g-btc" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%"   stop-color="#ffb24d"/>
       <stop offset="55%"  stop-color="#f7931a"/>
@@ -1246,6 +1357,7 @@ function renderDominancePie(btcD, ethD, altD, cap, capC, activeCoins) {
       <stop offset="55%"  stop-color="#7c7c92"/>
       <stop offset="100%" stop-color="#5f5f74"/>
     </linearGradient>
+
     <radialGradient id="dp-g-center" cx="50%" cy="38%" r="72%">
       <stop offset="0%"   stop-color="#26262e"/>
       <stop offset="55%"  stop-color="#17171c"/>
@@ -1260,6 +1372,7 @@ function renderDominancePie(btcD, ethD, altD, cap, capC, activeCoins) {
       <stop offset="60%"  stop-color="#1d1d27" stop-opacity=".18"/>
       <stop offset="100%" stop-color="#1a1a1a" stop-opacity="0"/>
     </radialGradient>
+
     <filter id="dp-shadow" x="-40%" y="-40%" width="180%" height="180%">
       <feDropShadow dx="0" dy="9" stdDeviation="16" flood-color="#000" flood-opacity=".55"/>
     </filter>
@@ -1276,10 +1389,12 @@ function renderDominancePie(btcD, ethD, altD, cap, capC, activeCoins) {
       <feColorMatrix in="sh" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0" result="shc"/>
       <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="shc"/></feMerge>
     </filter>
+
     <clipPath id="dp-ringclip">
       <path d="M${polar(cx,cy,outerR,0).x.toFixed(1)},${polar(cx,cy,outerR,0).y.toFixed(1)} A${outerR},${outerR} 0 1 1 ${(cx-0.01).toFixed(2)},${(cy-outerR).toFixed(2)} L${(cx-0.01).toFixed(2)},${(cy-innerR).toFixed(2)} A${innerR},${innerR} 0 1 0 ${polar(cx,cy,innerR,0).x.toFixed(1)},${polar(cx,cy,innerR,0).y.toFixed(1)} Z"/>
     </clipPath>
-  </defs>\`;
+  </defs>`;
+
   // ALTS kept visually quieter than BTC/ETH. Percentage label colors are
   // lightened vs the ring fills so the digits pop on the near-black card.
   const segs = [
@@ -1287,25 +1402,33 @@ function renderDominancePie(btcD, ethD, altD, cap, capC, activeCoins) {
     { pct: ethD, fill: 'url(#dp-g-eth)',  color: '#8ea4ff', halo: '#627eea', label: 'ETH'  },
     { pct: altD, fill: 'url(#dp-g-alts)', color: '#a9a9bf', halo: '#7c7c92', label: 'ALTS' },
   ];
+
   let startDeg = 0;
   const halos = [], paths = [], rims = [], seps = [], reveal = [], labels = [];
+
   segs.forEach((s, i) => {
     const sweep = (s.pct / 100) * 360;
     const endDeg = startDeg + sweep;
+
     // 1) subtle blurred halo BEHIND the crisp arc (depth, never over the color)
     halos.push(donutSector(cx, cy, outerR, innerR, startDeg, endDeg, s.halo));
+
     // 2) crisp, high-saturation gradient arc (the readability anchor)
     paths.push(donutSector(cx, cy, outerR, innerR, startDeg, endDeg, s.fill).replace('<path ', '<path class="dp-slice" '));
+
     // 3) thin bright rim-light along the outer edge (moderate neon pop)
-    rims.push(\`<path d="${arcStroke(cx, cy, outerR - 1.4, startDeg, endDeg)}" fill="none" stroke="${s.halo}" stroke-width="2.2" stroke-linecap="round" opacity=".85"/>\`);
+    rims.push(`<path d="${arcStroke(cx, cy, outerR - 1.4, startDeg, endDeg)}" fill="none" stroke="${s.halo}" stroke-width="2.2" stroke-linecap="round" opacity=".85"/>`);
+
     // 4) crisp near-black separator at each segment START only
     const g1 = polar(cx, cy, innerR, startDeg), g2 = polar(cx, cy, outerR, startDeg);
-    seps.push(\`<line x1="${g1.x.toFixed(1)}" y1="${g1.y.toFixed(1)}" x2="${g2.x.toFixed(1)}" y2="${g2.y.toFixed(1)}" stroke="#0b0b0e" stroke-width="2.6" stroke-opacity=".92"/>\`);
+    seps.push(`<line x1="${g1.x.toFixed(1)}" y1="${g1.y.toFixed(1)}" x2="${g2.x.toFixed(1)}" y2="${g2.y.toFixed(1)}" stroke="#0b0b0e" stroke-width="2.6" stroke-opacity=".92"/>`);
+
     // 5) stroke-dash sweep reveal mask (directional wipe, in ring coords)
     const ml1 = polar(cx, cy, midR, startDeg), ml2 = polar(cx, cy, midR, endDeg);
     const mlLarge = sweep > 180 ? 1 : 0;
     const dash = (sweep / 360) * midCirc;
-    reveal.push(\`<path d="M${ml1.x.toFixed(1)},${ml1.y.toFixed(1)} A${midR.toFixed(1)},${midR.toFixed(1)} 0 ${mlLarge} 1 ${ml2.x.toFixed(1)},${ml2.y.toFixed(1)}" fill="none" stroke="#0c0c0f" stroke-width="${(band + 4).toFixed(0)}" stroke-linecap="butt" stroke-dasharray="${dash.toFixed(1)} ${midCirc.toFixed(1)}" stroke-dashoffset="${dash.toFixed(1)}"><animate attributeName="stroke-dashoffset" from="${dash.toFixed(1)}" to="0" dur="0.85s" begin="${(0.15 + i * 0.12).toFixed(2)}s" calcMode="spline" keySplines="0.22 1 0.36 1" fill="freeze"/></path>\`);
+    reveal.push(`<path d="M${ml1.x.toFixed(1)},${ml1.y.toFixed(1)} A${midR.toFixed(1)},${midR.toFixed(1)} 0 ${mlLarge} 1 ${ml2.x.toFixed(1)},${ml2.y.toFixed(1)}" fill="none" stroke="#0c0c0f" stroke-width="${(band + 4).toFixed(0)}" stroke-linecap="butt" stroke-dasharray="${dash.toFixed(1)} ${midCirc.toFixed(1)}" stroke-dashoffset="${dash.toFixed(1)}"><animate attributeName="stroke-dashoffset" from="${dash.toFixed(1)}" to="0" dur="0.85s" begin="${(0.15 + i * 0.12).toFixed(2)}s" calcMode="spline" keySplines="0.22 1 0.36 1" fill="freeze"/></path>`);
+
     // 6) leader line + jewel-like end node + two-tier color-coded label
     const mid = startDeg + sweep / 2;
     const lp  = polar(cx, cy, outerR + 14, mid);
@@ -1315,7 +1438,8 @@ function renderDominancePie(btcD, ethD, altD, cap, capC, activeCoins) {
     const tx  = hx  + (isRight ? 12 : -12);
     const anch = isRight ? 'start' : 'end';
     const ldelay = (0.55 + i * 0.12).toFixed(2);
-    labels.push(\`
+
+    labels.push(`
       <g opacity="0">
         <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="${ldelay}s" fill="freeze"/>
         <animateTransform attributeName="transform" type="translate" from="0 6" to="0 0" dur="0.55s" begin="${ldelay}s" calcMode="spline" keySplines="0.22 1 0.36 1" fill="freeze"/>
@@ -1325,15 +1449,18 @@ function renderDominancePie(btcD, ethD, altD, cap, capC, activeCoins) {
         <circle cx="${ep.x.toFixed(1)}" cy="${(ep.y - 1.1).toFixed(1)}" r="1.2" fill="#ffffff" opacity=".75"/>
         <text x="${tx.toFixed(1)}" y="${(ep.y - 12).toFixed(1)}" text-anchor="${anch}" fill="${s.color}" font-size="13" font-weight="700" letter-spacing="2.5" font-family="'IBM Plex Mono',ui-monospace,monospace" opacity=".85">${s.label}</text>
         <text x="${tx.toFixed(1)}" y="${(ep.y + 22).toFixed(1)}" text-anchor="${anch}" fill="${s.color}" font-size="37" font-weight="800" letter-spacing="-.5" font-family="'IBM Plex Mono',ui-monospace,monospace">${nf(s.pct, 2)}<tspan font-size="22" font-weight="700" dx="1">%</tspan></text>
-      </g>\`);
+      </g>`);
+
     startDeg = endDeg;
   });
+
   // glossy specular highlight arc along the top edge of the ring
   const specL = polar(cx, cy, outerR - 2.5, 298), specR = polar(cx, cy, outerR - 2.5, 62);
-  const specArc = \`<path d="M${specL.x.toFixed(1)},${specL.y.toFixed(1)} A${(outerR-2.5).toFixed(1)},${(outerR-2.5).toFixed(1)} 0 0 1 ${specR.x.toFixed(1)},${specR.y.toFixed(1)}" fill="none" stroke="#ffffff" stroke-opacity=".26" stroke-width="2.1" stroke-linecap="round"/>\`;
+  const specArc = `<path d="M${specL.x.toFixed(1)},${specL.y.toFixed(1)} A${(outerR-2.5).toFixed(1)},${(outerR-2.5).toFixed(1)} 0 0 1 ${specR.x.toFixed(1)},${specR.y.toFixed(1)}" fill="none" stroke="#ffffff" stroke-opacity=".26" stroke-width="2.1" stroke-linecap="round"/>`;
+
   // recessed glass center hub (filter-free crisp text on top)
   const capColor = capC >= 0 ? '#34d27b' : '#ff5b57';
-  const center = \`
+  const center = `
     <g opacity="0">
       <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.5s" fill="freeze"/>
       <g filter="url(#dp-inner-shadow)">
@@ -1346,8 +1473,9 @@ function renderDominancePie(btcD, ethD, altD, cap, capC, activeCoins) {
       <text x="${cx}" y="${cy + 6}" text-anchor="middle" fill="#f4f4f8" font-size="29" font-weight="800" letter-spacing="-.5" font-family="'IBM Plex Mono',ui-monospace,monospace">${fmtLarge(cap)}</text>
       <line x1="${cx - 30}" y1="${cy + 20}" x2="${cx + 30}" y2="${cy + 20}" stroke="#33333f" stroke-width="1"/>
       <text x="${cx}" y="${cy + 40}" text-anchor="middle" fill="${capColor}" font-size="14" font-weight="700" font-family="'IBM Plex Mono',ui-monospace,monospace">${fmtPct(capC)} <tspan fill="#6a6a82" font-weight="600">24h</tspan></text>
-    </g>\`;
-  const svg = \`<svg viewBox="0 0 900 560" xmlns="http://www\.w3.org/2000/svg" style="width:100%;display:block">
+    </g>`;
+
+  const svg = `<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
     ${defs}
     <ellipse cx="${cx}" cy="${cy}" rx="${(outerR * 1.55).toFixed(0)}" ry="${(outerR * 1.4).toFixed(0)}" fill="url(#dp-g-bloom)"/>
     <g transform="translate(${cx} ${cy})">
@@ -1366,43 +1494,53 @@ function renderDominancePie(btcD, ethD, altD, cap, capC, activeCoins) {
     </g>
     ${center}
     ${labels.join('')}
-  </svg>\`;
-  setHTML('dom-section', \`
+  </svg>`;
+
+  setHTML('dom-section', `
     ${svg}
     <div style="margin-top:12px;font-size:.78rem;color:var(--sub);text-align:center;padding-bottom:4px">
       Market Cap: <strong style="color:var(--text)">${fmtLarge(cap)}</strong>
       &nbsp;·&nbsp; 24h: <span class="badge ${cls(capC)}">${fmtPct(capC)}</span>
       &nbsp;·&nbsp; ${t('active_cryptos')} <strong style="color:var(--text)">${nf(activeCoins, 0)}</strong>
-    </div>\`);
+    </div>`);
 }
+
 // ── TOP VOLUME ───────────────────────────────────────────────────────────────
+
 function renderVolume() {
   if (!allCoins.length) return;
   const topVols = [...allCoins]
     .sort((a, b) => (b.total_volume || 0) - (a.total_volume || 0))
     .slice(0, 10);
+
   const rows = topVols.map((c, i) => {
-    return \`<div style="display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--border)">
+    return `<div style="display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--border)">
       <span style="color:var(--sub);font-size:.85rem;min-width:18px;text-align:center">${i + 1}</span>
       <img src="${esc(c.image)}" style="width:34px;height:34px;border-radius:50%;object-fit:cover;flex-shrink:0" alt="" onerror="this.style.display='none'">
       <span style="font-weight:700;font-size:.95rem;min-width:56px">${esc(c.symbol.toUpperCase())}</span>
       <span style="font-weight:800;font-size:.95rem">${fmtLarge(c.total_volume)}</span>
-    </div>\`;
+    </div>`;
   }).join('');
-  setHTML('vol-section', rows || \`<div class="err">${t('nodata')}</div>\`);
+
+  setHTML('vol-section', rows || `<div class="err">${t('nodata')}</div>`);
 }
+
 // ── LOADERS ─────────────────────────────────────────────────────────────────
+
 async function loadMarkets() {
   const data = SNAP && SNAP.markets;
   if (!data || !data.length) {
-    setHTML('top20-section', \`<div class="err">${t('err_load')}</div>\`);
+    setHTML('top20-section', `<div class="err">${t('err_load')}</div>`);
     return;
   }
+
   const setIco = (id, c) => { const e = el(id); if (e && c && c.image) e.src = c.image; };
+
   // Busca pelo SÍMBOLO (não pela posição no ranking de market cap),
   // senão se uma stablecoin ultrapassa o ativo, o card pega a moeda errada.
   const bySym = (sym, fallbackIdx) =>
     data.find(c => c && c.symbol && c.symbol.toLowerCase() === sym) || data[fallbackIdx];
+
   // BTC KPI
   const btc = bySym('btc', 0);
   if (btc) {
@@ -1412,6 +1550,7 @@ async function loadMarkets() {
     el('kpi-btc-c').className = 'kpi-chg-inline ' + cls(btc.price_change_percentage_24h);
     if (btc.circulating_supply) set('kpi-btc-supply', fmtSupply(btc.circulating_supply) + ' BTC');
   }
+
   // ETH KPI
   const eth = bySym('eth', 1);
   if (eth) {
@@ -1420,8 +1559,10 @@ async function loadMarkets() {
     el('kpi-eth-c').textContent = fmtPct(eth.price_change_percentage_24h);
     el('kpi-eth-c').className = 'kpi-chg-inline ' + cls(eth.price_change_percentage_24h);
   }
+
   // Heatmap — sem stablecoins
   heatCoins = data.filter(c => !STABLECOINS.has(c.symbol.toLowerCase()));
+
   // Cache e renderiza tabela + volume
   allCoins = data;
   renderCoinTable(tblLimit);
@@ -1430,6 +1571,7 @@ async function loadMarkets() {
   renderCryptoBRL();
   renderActiveHeat();
 }
+
 function renderTicker() {
   var box = el('live-ticker');
   if (!box || !allCoins.length) return;
@@ -1443,20 +1585,22 @@ function renderTicker() {
     return '<span class="tk"><span class="tk-s">' + c.symbol.toUpperCase() + '</span><span class="tk-p">' + fmtPrice(c.current_price) + '</span><span style="color:' + col + '">' + (up ? '▲' : '▼') + nf(Math.abs(p || 0), 2) + '%</span></span>';
   }).join('<span class="tk-d">·</span>');
 }
+
 function pctCell(v) {
   if (v == null || isNaN(v)) return '<span style="color:var(--sub)">—</span>';
   const c = v >= 0 ? 'up' : 'dn';
   const bg = v >= 0 ? 'rgba(75,226,168,.16)' : 'rgba(255,107,129,.16)';
   const col = v >= 0 ? 'var(--green)' : 'var(--red)';
-  return \`<span class="pct-cell" style="background:${bg};color:${col}">${fmtPct(v)}</span>\`;
+  return `<span class="pct-cell" style="background:${bg};color:${col}">${fmtPct(v)}</span>`;
 }
+
 function renderCoinTable(n) {
   tblLimit = n;
   const coins = allCoins.slice(0, n);
   const rows = coins.map((c, i) => {
     const p24 = c.price_change_percentage_24h_in_currency ?? c.price_change_percentage_24h;
     const p7d = c.price_change_percentage_7d_in_currency;
-    return \`<tr>
+    return `<tr>
       <td class="num">${i + 1}</td>
       <td>
         <img class="coin-logo" src="${esc(c.image)}" alt="" onerror="this.style.display='none'" loading="lazy">
@@ -1468,9 +1612,10 @@ function renderCoinTable(n) {
       <td class="right">${pctCell(p7d)}</td>
       <td class="right">${fmtLarge(c.market_cap)}</td>
       <td class="right">${fmtLarge(c.total_volume)}</td>
-    </tr>\`;
+    </tr>`;
   }).join('');
-  setHTML('top20-section', \`
+
+  setHTML('top20-section', `
     <table class="coin-tbl">
       <thead><tr>
         <th style="width:36px">#</th>
@@ -1482,12 +1627,13 @@ function renderCoinTable(n) {
         <th style="text-align:right">Vol 24h</th>
       </tr></thead>
       <tbody>${rows}</tbody>
-    </table>\`);
+    </table>`);
 }
+
 async function loadGlobal() {
   const data = SNAP && SNAP.global;
   if (!data?.data) {
-    setHTML('dom-section', \`<div class="err">${t('err_load')}</div>\`);
+    setHTML('dom-section', `<div class="err">${t('err_load')}</div>`);
     return;
   }
   const d    = data.data;
@@ -1496,13 +1642,16 @@ async function loadGlobal() {
   const altD = Math.max(0, 100 - btcD - ethD);
   const cap  = d.total_market_cap?.usd;
   const capC = d.market_cap_change_percentage_24h_usd;
+
   // Market cap KPI
   set('kpi-mktcap', fmtLarge(cap));
   el('kpi-mktcap-c').textContent = fmtPct(capC);
   el('kpi-mktcap-c').className = 'kpi-chg ' + cls(capC);
+
   // 3D pie
   renderDominancePie(btcD, ethD, altD, cap, capC, d.active_cryptocurrencies);
 }
+
 // Barra horizontal do Fear & Greed (KPI do topo): trilha vermelho→verde, marcadores
 // e o Bitcoin PEGANDO FOGO na posição do valor (chamas animadas atrás do emblema).
 function fgBarSvg(val, color) {
@@ -1513,8 +1662,8 @@ function fgBarSvg(val, color) {
   const btcImg = ((allCoins.find(c => c.symbol && c.symbol.toLowerCase() === 'btc') || {}).image)
     || 'https://assets.coingecko.com/coins/images/1/large/bitcoin.png';
   // marcadores sutis DENTRO da barra (não estouram as bordas → menos poluído)
-  const ticks = [25, 50, 75].map(p => { const x = (padX + p / 100 * barW).toFixed(1); return \`<line x1="${x}" y1="${barY + 2}" x2="${x}" y2="${barY + barH - 2}" stroke="rgba(0,0,0,.3)" stroke-width="1"/>\`; }).join('');
-  return \`<svg viewBox="0 0 ${W} ${H}" xmlns="http://www\.w3.org/2000/svg">
+  const ticks = [25, 50, 75].map(p => { const x = (padX + p / 100 * barW).toFixed(1); return `<line x1="${x}" y1="${barY + 2}" x2="${x}" y2="${barY + barH - 2}" stroke="rgba(0,0,0,.3)" stroke-width="1"/>`; }).join('');
+  return `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="fgb-g" x1="0" y1="0" x2="1" y2="0">
         <stop offset="0%" stop-color="#ef5350"/><stop offset="27%" stop-color="#ff9800"/>
@@ -1540,39 +1689,47 @@ function fgBarSvg(val, color) {
       <circle cx="0" cy="-7" r="11" fill="#1a1206" opacity="0.18"/>
       <image href="${btcImg}" xlink:href="${btcImg}" x="-10" y="-17" width="20" height="20" preserveAspectRatio="xMidYMid meet"/>
     </g>
-  </svg>\`;
+  </svg>`;
 }
+
 async function loadFearGreed() {
   const data = SNAP && SNAP.fng;
   if (!data?.data?.[0]) {
     set('kpi-fg-val', '—');
-    setHTML('fg-section', \`<div class="err">${t('err_load')}</div>\`);
+    setHTML('fg-section', `<div class="err">${t('err_load')}</div>`);
     return;
   }
+
   const entries = data.data; // [0] = hoje, mais recente primeiro
   const today   = entries[0];
   const val     = parseInt(today.value, 10);
+
   const todayLbl = t(today.value_classification);
   const fgCol    = v => v <= 24 ? '#ef5350' : v <= 49 ? '#ff9800' : v <= 74 ? '#8bc34a' : '#43a047';
   const color    = fgCol(val);
+
   // KPI topo (card 4): só o número (sem a conclusão/classificação)
   el('kpi-fg-val').textContent = val;
   el('kpi-fg-val').style.color = color;
+
   // ── Velocímetro SVG ──────────────────────────────────────────────────────
   const cx = 180, cy = 172, R = 138, sw = 24, nR = 140;
   const arc = Math.PI * R;
+
   // Conversão de valor → ângulo (0→180°, 100→0°)
   const ang = v => (180 - v * 1.8) * Math.PI / 180;
+
   // Segmento colorido do arco, com draw-on POR-PATH (tema-agnóstico, sem máscara).
   function seg(s, e, col) {
     const len  = arc * (e - s) / 100;
     const off  = -arc * s / 100;
     const offS = off.toFixed(2);
     const from = (off + len).toFixed(2);            // partida: zona "vazia"
-    return \`<path d="M ${cx-R},${cy} A ${R},${R} 0 0 1 ${cx+R},${cy}" fill="none" stroke="${col}" stroke-width="${sw}" stroke-linecap="butt" stroke-dasharray="${len.toFixed(2)} ${arc.toFixed(2)}" stroke-dashoffset="${from}">
+    return `<path d="M ${cx-R},${cy} A ${R},${R} 0 0 1 ${cx+R},${cy}" fill="none" stroke="${col}" stroke-width="${sw}" stroke-linecap="butt" stroke-dasharray="${len.toFixed(2)} ${arc.toFixed(2)}" stroke-dashoffset="${from}">
         <animate attributeName="stroke-dashoffset" from="${from}" to="${offS}" dur="0.85s" begin="0s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1" values="${from};${offS}"/>
-      </path>\`;
+      </path>`;
   }
+
   // Agulha — construída no ângulo VERDADEIRO; a animação gira do repouso (val=0) → identidade (0).
   const rad    = ang(val);
   const tx     = (cx + nR * Math.cos(rad)).toFixed(1);
@@ -1581,6 +1738,7 @@ async function loadFearGreed() {
   const btcImg = ((allCoins.find(c => c.symbol.toLowerCase() === 'btc') || {}).image)
     || 'https://assets.coingecko.com/coins/images/1/large/bitcoin.png';
   const tipR = 11;
+
   // Lâmina afilada de 6 pontos (cintura no meio) + faixa especular
   const perpRad = rad + Math.PI / 2;
   const bw = 7, backLen = 20, midw = 3.0, midFrac = 0.52;
@@ -1596,12 +1754,14 @@ async function loadFearGreed() {
   const m2y = (my + midw * Math.sin(perpRad)).toFixed(1);
   const tailX = (cx - backLen * Math.cos(rad)).toFixed(1);
   const tailY = (cy + backLen * Math.sin(rad)).toFixed(1);
-  const needleBody = \`M${b1x},${b1y} L${m1x},${m1y} L${tx},${ty} L${m2x},${m2y} L${b2x},${b2y} L${tailX},${tailY} Z\`;
-  const needleSpec = \`M${b1x},${b1y} L${m1x},${m1y} L${tx},${ty} Z\`;
+  const needleBody = `M${b1x},${b1y} L${m1x},${m1y} L${tx},${ty} L${m2x},${m2y} L${b2x},${b2y} L${tailX},${tailY} Z`;
+  const needleSpec = `M${b1x},${b1y} L${m1x},${m1y} L${tx},${ty} Z`;
+
   // Rotação de ENTRADA: do repouso (val=0, à esquerda) de volta à identidade.
   // Sinal correto para esta convenção é NEGATIVO (degTrue - 180 = -(val*1.8)).
   const sweepFrom = ((180 - val * 1.8) - 180).toFixed(2);
-  const gaugeSvg = \`<svg viewBox="0 0 360 206" xmlns="http://www\.w3.org/2000/svg" style="width:100%;max-width:400px;display:block;margin:0 auto">
+
+  const gaugeSvg = `<svg viewBox="0 0 360 206" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:400px;display:block;margin:0 auto">
     <defs>
       <filter id="sp-neon" x="-50%" y="-50%" width="200%" height="200%">
         <feGaussianBlur in="SourceGraphic" stdDeviation="3.6" result="sp-halo"/>
@@ -1659,13 +1819,16 @@ async function loadFearGreed() {
         <stop offset="100%" stop-color="${color}"/>
       </radialGradient>
     </defs>
+
     <path d="M ${cx-R-10},${cy} A ${R+10},${R+10} 0 0 1 ${cx+R+10},${cy}" fill="none" stroke="url(#sp-plate)" stroke-width="2"/>
     <path d="M ${cx-R-10},${cy} A ${R+10},${R+10} 0 0 1 ${cx+R+10},${cy}" fill="none" stroke="url(#sp-rim)" stroke-width="1.4" opacity="0">
       <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.5s" fill="freeze"/>
     </path>
+
     <g filter="url(#sp-inset)">
       <path d="M ${cx-R},${cy} A ${R},${R} 0 0 1 ${cx+R},${cy}" fill="none" stroke="url(#sp-track)" stroke-width="${sw+10}" stroke-linecap="round"/>
     </g>
+
     <g filter="url(#sp-neon)">
       ${seg(0,25,'#ef5350')}
       ${seg(25,45,'#ff9800')}
@@ -1676,6 +1839,7 @@ async function loadFearGreed() {
     <path d="M ${cx-R},${cy} A ${R},${R} 0 0 1 ${cx+R},${cy}" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="2" stroke-linecap="round" transform="translate(0,-5)" opacity="0">
       <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.55s" fill="freeze"/>
     </path>
+
     <g filter="url(#sp-needle-sh)">
       <animateTransform attributeName="transform" type="rotate" from="${sweepFrom} ${cx} ${cy}" to="0 ${cx} ${cy}" dur="1.1s" begin="0.1s" fill="freeze" calcMode="spline" keySplines="0.34 1.1 0.4 1" keyTimes="0;1" values="${sweepFrom} ${cx} ${cy};0 ${cx} ${cy}"/>
       <!-- Marcha lenta: balanço (motor ligado) — mais forte -->
@@ -1686,19 +1850,23 @@ async function loadFearGreed() {
       <path d="${needleSpec}" fill="rgba(255,255,255,.55)"/>
       <image href="${btcImg}" xlink:href="${btcImg}" x="${(tx - tipR).toFixed(1)}" y="${(ty - tipR).toFixed(1)}" width="${tipR * 2}" height="${tipR * 2}" filter="url(#sp-tipsh)" preserveAspectRatio="xMidYMid meet"/>
     </g>
+
     <circle cx="${cx}" cy="${cy}" r="14" fill="url(#sp-ring)" stroke="rgba(0,0,0,.6)" stroke-width="1"/>
     <circle cx="${cx}" cy="${cy}" r="14" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="0.8"/>
     <circle cx="${cx}" cy="${cy}" r="9" fill="url(#sp-hub)"/>
     <circle cx="${cx}" cy="${cy}" r="3.6" fill="url(#sp-jewel)">
       <animate attributeName="r" values="3.6;5.2;3.6" dur="0.8s" begin="0.6s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1" keyTimes="0;0.5;1"/>
     </circle>
+
     <text x="${cx-R+2}" y="${cy+26}" text-anchor="start" fill="#ef5350" font-size="10.5" font-weight="700" letter-spacing="1.4" font-family="'IBM Plex Mono',ui-monospace,monospace" opacity="0.92">${t('fear')}</text>
     <text x="${cx+R-2}" y="${cy+26}" text-anchor="end" fill="#43a047" font-size="10.5" font-weight="700" letter-spacing="1.4" font-family="'IBM Plex Mono',ui-monospace,monospace" opacity="0.92">${t('greed')}</text>
-  </svg>\`;
-  const gaugeNumber = \`<div style="text-align:center;margin-top:4px">
+  </svg>`;
+
+  const gaugeNumber = `<div style="text-align:center;margin-top:4px">
     <div style="font-size:3.4rem;font-weight:800;color:${color};font-family:'IBM Plex Mono',ui-monospace,monospace;line-height:1;letter-spacing:-1px;font-variant-numeric:tabular-nums;filter:drop-shadow(0 0 10px ${color}55)">${val}</div>
     <div style="display:inline-block;margin-top:8px;padding:5px 16px;border-radius:999px;background:${color}1f;font-size:.82rem;font-weight:700;color:${color};letter-spacing:2.5px">${todayLbl.toUpperCase()}</div>
-  </div>\`;
+  </div>`;
+
   // ── Histórico ────────────────────────────────────────────────────────────
   const histRows = [
     [t('today'),     entries[0]],
@@ -1709,33 +1877,38 @@ async function loadFearGreed() {
     const v  = parseInt(e.value, 10);
     const c  = fgCol(v);
     const cl = t(e.value_classification);
-    return \`<div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border)">
+    return `<div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border)">
       <span style="color:var(--sub);font-size:.83rem">${label}</span>
       <div style="display:flex;align-items:center;gap:10px">
         <span style="font-size:.82rem;font-weight:600;color:${c}">${cl}</span>
         <span style="background:${c};color:#fff;min-width:32px;height:32px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem">${v}</span>
       </div>
-    </div>\`;
+    </div>`;
   }).join('');
-  setHTML('fg-section', \`
+
+  setHTML('fg-section', `
     ${gaugeSvg}
     ${gaugeNumber}
     <div style="margin-top:14px">${histRows}</div>
-  \`);
+  `);
+
   // KPI do topo (card 4): barra horizontal com o Bitcoin pegando fogo (substitui o velocímetro mini)
   setHTML('fg-bar', fgBarSvg(val, color));
 }
+
 async function loadUSDToBRL() {
   const data = SNAP && SNAP.usdbrl;
   if (!data?.USDBRL) {
     set('kpi-usd', '—');
-    setHTML('dollar-section', \`<div class="err">${t('err_load')}</div>\`);
+    setHTML('dollar-section', `<div class="err">${t('err_load')}</div>`);
     return;
   }
   const usd = data.USDBRL;
   const eur = data.EURBRL;
+
   usdBrl = parseFloat(usd.bid);
   set('kpi-usd', fmtBRL(usd.bid));
+
   const pct    = parseFloat(usd.pctChange);
   const eUsdC = el('kpi-usd-c');
   if (eUsdC) { eUsdC.textContent = fmtPct(pct); eUsdC.className = 'kpi-chg ' + cls(pct); }
@@ -1744,10 +1917,12 @@ async function loadUSDToBRL() {
   const arrow  = pct >= 0 ? '▲' : '▼';
   const v4 = x => nf(parseFloat(x), 4);
   const spread = nf(parseFloat(usd.ask) - parseFloat(usd.bid), 4);
+
   const eurRow = eur
     ? fxRow('🇪🇺', false, 'Euro', 'EUR / BRL', 'R$ ' + v4(eur.bid), parseFloat(eur.pctChange), true)
     : '';
-  setHTML('dollar-section', \`
+
+  setHTML('dollar-section', `
     <div style="display:flex;align-items:center;gap:11px;margin-bottom:4px">
       <span style="font-size:1.9rem">🇺🇸</span>
       <div style="font-size:.72rem;color:var(--sub);text-transform:uppercase;letter-spacing:.6px">${t('dollar_sub')}</div>
@@ -1776,17 +1951,19 @@ async function loadUSDToBRL() {
     <div id="dol-usdt-row"></div>
     <div id="dol-usdc-row"></div>
     <div id="dol-sats"></div>
-  \`);
+  `);
+
   renderCryptoBRL();
 }
+
 // Linha de ativo (bandeira/logo · nome · valor · variação colada no valor)
 function fxRow(icon, isImg, name, sub, value, chgPct, comma) {
   const up = (chgPct ?? 0) >= 0;
   const pctTxt = nf(Math.abs(chgPct ?? 0), 2);   // locale cuida da vírgula/ponto
   const ic = isImg
-    ? \`<img src="${esc(icon)}" style="width:34px;height:34px;border-radius:50%;flex-shrink:0" onerror="this.style.display='none'">\`
-    : \`<span style="font-size:1.7rem;flex-shrink:0;width:34px;text-align:center">${icon}</span>\`;
-  return \`<div style="display:flex;align-items:center;gap:13px;padding:13px 0;border-top:1px solid var(--border)">
+    ? `<img src="${esc(icon)}" style="width:34px;height:34px;border-radius:50%;flex-shrink:0" onerror="this.style.display='none'">`
+    : `<span style="font-size:1.7rem;flex-shrink:0;width:34px;text-align:center">${icon}</span>`;
+  return `<div style="display:flex;align-items:center;gap:13px;padding:13px 0;border-top:1px solid var(--border)">
     ${ic}
     <div style="min-width:104px;flex-shrink:0">
       <div style="font-weight:700;font-size:.98rem;line-height:1.1">${name}</div>
@@ -1794,8 +1971,9 @@ function fxRow(icon, isImg, name, sub, value, chgPct, comma) {
     </div>
     <div style="font-weight:800;font-size:1.28rem">${value}</div>
     <span style="font-weight:700;font-size:.85rem;color:${up ? 'var(--green)' : 'var(--red)'}">${up ? '▲' : '▼'} ${pctTxt}%</span>
-  </div>\`;
+  </div>`;
 }
+
 // Preenche BTC/ETH em reais (depende de usdBrl + allCoins; chamado por ambos loaders)
 function renderCryptoBRL() {
   if (!usdBrl || !allCoins.length) return;
@@ -1810,29 +1988,33 @@ function renderCryptoBRL() {
   fill('dol-eth-row', 'eth', 'Ethereum');
   fill('dol-usdt-row', 'usdt', 'Tether');
   fill('dol-usdc-row', 'usdc', 'USD Coin');
+
   // ⚡ Sats por Real / Dólar (1 BTC = 100 milhões de satoshis)
   const satsBox = el('dol-sats');
   const btcC = allCoins.find(x => x.symbol.toLowerCase() === 'btc');
   if (satsBox && btcC && btcC.current_price > 0) {
     const satsUsd = 1e8 / btcC.current_price;
     const satsBrl = satsUsd / usdBrl;
-    satsBox.innerHTML = \`<div class="sats-grid">
+    satsBox.innerHTML = `<div class="sats-grid">
       <div class="sats-tile"><div class="sats-l">⚡ ${t('sats_brl')}</div><div class="sats-v">R$ 1 = ${nf(satsBrl, 0)}<small>sats</small></div></div>
       <div class="sats-tile"><div class="sats-l">⚡ ${t('sats_usd')}</div><div class="sats-v">US$ 1 = ${nf(satsUsd, 0)}<small>sats</small></div></div>
       <div class="sats-foot">${t('sats_foot')}</div>
-    </div>\`;
+    </div>`;
   }
 }
+
 async function loadStablecoins() {
   const data = SNAP && SNAP.stables;
-  if (!data || !data.length) { setHTML('stable-section', \`<div class="err">${t('err_load')}</div>\`); return; }
+  if (!data || !data.length) { setHTML('stable-section', `<div class="err">${t('err_load')}</div>`); return; }
+
   const top = data.slice(0, 10);
   // Total REAL do mercado de stablecoins (categoria CoinGecko); fallback = soma do top 10
   let total = top.reduce((s, c) => s + (c.market_cap || 0), 0);
   const scTotal = SNAP && SNAP.stables_total_mc;
   if (scTotal && scTotal > 0) total = scTotal;
+
   // ── Tabela: Símbolo · Stablecoin · Valor de Mercado (sem cores) ──
-  const rows = top.map(c => \`
+  const rows = top.map(c => `
     <tr>
       <td style="padding:12px 8px;border-bottom:1px solid var(--border);white-space:nowrap">
         <img src="${esc(c.image)}" style="width:28px;height:28px;border-radius:50%;vertical-align:middle;margin-right:9px" onerror="this.style.display='none'">
@@ -1840,29 +2022,33 @@ async function loadStablecoins() {
       </td>
       <td style="padding:12px 8px;border-bottom:1px solid var(--border);color:var(--sub);font-size:.92rem">${c.name}</td>
       <td style="padding:12px 8px;border-bottom:1px solid var(--border);text-align:right;font-weight:700;font-size:1.02rem">${fmtLarge(c.market_cap)}</td>
-    </tr>\`).join('');
+    </tr>`).join('');
+
   const th = 'text-align:left;padding:9px 8px;color:var(--sub);font-size:.7rem;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--border)';
-  const table = \`<table style="width:100%;border-collapse:collapse">
+  const table = `<table style="width:100%;border-collapse:collapse">
     <thead><tr>
       <th style="${th}">${t('th_symbol')}</th>
       <th style="${th}">Stablecoin</th>
       <th style="${th};text-align:right">${t('th_mcap')}</th>
     </tr></thead>
     <tbody>${rows}</tbody>
-  </table>\`;
+  </table>`;
+
   // ── Pizza: 4 maiores + "Outras" (soma do restante), % em cada fatia ──
   const COLORS = ['#26a17b', '#2775ca', '#f0b90b', '#9b8cff', '#9a9aae'];
   const big = top.slice(0, 4).map(c => ({ ticker: c.symbol.toUpperCase(), mc: c.market_cap || 0 }));
   const big4Sum = big.reduce((s, d) => s + d.mc, 0);
   const restMc = Math.max(0, total - big4Sum);   // tudo além do top 4 (inclui 11+)
   const pieData = restMc > 0 ? [...big, { ticker: 'Outras', mc: restMc }] : big;
+
   const cx = 200, cy = 200, ro = 185, ri = 112;
   const polar = (r, deg) => { const a = (deg - 90) * Math.PI / 180; return { x: cx + r * Math.cos(a), y: cy + r * Math.sin(a) }; };
   const sector = (s, e, fill) => {
     const large = (e - s > 180) ? 1 : 0;
     const o1 = polar(ro, s), o2 = polar(ro, e), i2 = polar(ri, e), i1 = polar(ri, s);
-    return \`<path class="stable-slice" d="M${o1.x.toFixed(1)},${o1.y.toFixed(1)} A${ro},${ro} 0 ${large} 1 ${o2.x.toFixed(1)},${o2.y.toFixed(1)} L${i2.x.toFixed(1)},${i2.y.toFixed(1)} A${ri},${ri} 0 ${large} 0 ${i1.x.toFixed(1)},${i1.y.toFixed(1)} Z" fill="${fill}"/>\`;
+    return `<path class="stable-slice" d="M${o1.x.toFixed(1)},${o1.y.toFixed(1)} A${ro},${ro} 0 ${large} 1 ${o2.x.toFixed(1)},${o2.y.toFixed(1)} L${i2.x.toFixed(1)},${i2.y.toFixed(1)} A${ri},${ri} 0 ${large} 0 ${i1.x.toFixed(1)},${i1.y.toFixed(1)} Z" fill="${fill}"/>`;
   };
+
   let start = 0;
   const slices = [], leg = [];
   pieData.forEach((d, i) => {
@@ -1870,36 +2056,40 @@ async function loadStablecoins() {
     const end = start + sweep;
     slices.push(sector(start, end, COLORS[i]));
     const g1 = polar(ri, start), g2 = polar(ro, start);
-    slices.push(\`<line x1="${g1.x.toFixed(1)}" y1="${g1.y.toFixed(1)}" x2="${g2.x.toFixed(1)}" y2="${g2.y.toFixed(1)}" stroke="#1a1a1a" stroke-width="2"/>\`);
+    slices.push(`<line x1="${g1.x.toFixed(1)}" y1="${g1.y.toFixed(1)}" x2="${g2.x.toFixed(1)}" y2="${g2.y.toFixed(1)}" stroke="#1a1a1a" stroke-width="2"/>`);
     const pct = total > 0 ? (d.mc / total * 100) : 0;
     leg.push({ ticker: d.ticker, pct: nf(pct, 1), color: COLORS[i] });
     start = end;
   });
-  const donut = \`<svg viewBox="0 0 400 400" xmlns="http://www\.w3.org/2000/svg" style="width:100%;max-width:580px;display:block;margin:0 auto">
+
+  const donut = `<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:580px;display:block;margin:0 auto">
     <defs><filter id="st-shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="7" stdDeviation="15" flood-color="#000" flood-opacity=".5"/></filter></defs>
     <g filter="url(#st-shadow)">${slices.join('')}</g>
     <text x="${cx}" y="${cy - 14}" text-anchor="middle" fill="#666" font-size="13" letter-spacing="3" font-family="'IBM Plex Mono',ui-monospace,monospace">TOTAL</text>
     <text x="${cx}" y="${cy + 22}" text-anchor="middle" fill="#e0e0e0" font-size="34" font-weight="800" font-family="'IBM Plex Mono',ui-monospace,monospace">${fmtLarge(total)}</text>
   </svg>
   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:11px 22px;margin-top:20px">
-    ${leg.map(l => \`<span style="display:inline-flex;align-items:center;gap:8px;font-size:1.05rem;font-weight:700">
+    ${leg.map(l => `<span style="display:inline-flex;align-items:center;gap:8px;font-size:1.05rem;font-weight:700">
       <span style="width:14px;height:14px;border-radius:4px;background:${l.color}"></span>
       <span>${l.ticker}</span>
       <span style="color:var(--sub);font-weight:600">${l.pct}%</span>
-    </span>\`).join('')}
-  </div>\`;
-  setHTML('stable-section', \`
+    </span>`).join('')}
+  </div>`;
+
+  setHTML('stable-section', `
     <div class="rsplit" style="display:grid;grid-template-columns:35fr 65fr;gap:28px;align-items:center">
       <div>${table}</div>
       <div>${donut}</div>
-    </div>\`);
+    </div>`);
 }
+
 // ── EXCHANGES HEATMAP ─────────────────────────────────────────────────────────
 async function loadExchanges() {
   // Casamento de nomes + variação derivada já vêm prontos do backend (data.json)
   exchData = (SNAP && SNAP.exch) || { spot: [], futures: [] };
   renderActiveHeat();
 }
+
 function renderExchanges() {
   if (heatView !== 'exch') return;
   const container = el('custom-heatmap');
@@ -1907,20 +2097,25 @@ function renderExchanges() {
   const btc = allCoins.find(c => c.symbol.toLowerCase() === 'btc');
   if (!btc || !btc.current_price) return;
   const btcUsd = btc.current_price;
+
   const list = exchData[exchMode] || [];
   const W = container.clientWidth || 900;
   const H = W < 520 ? 500 : 700;
   const GAP = 2;
+
   const base = list
     .map(e => ({ name: e.name, vol: (e.volBtc || 0) * btcUsd, chg: e.chg }))
     .filter(e => e.vol > 0)
     .sort((a, b) => b.vol - a.vol)
     .slice(0, 40);
-  if (!base.length) { setHTML('custom-heatmap', \`<div class="loading">${t('nodata')}</div>\`); return; }
+  if (!base.length) { setHTML('custom-heatmap', `<div class="loading">${t('nodata')}</div>`); return; }
+
   const pow = base.map(e => Math.pow(e.vol, 0.80));
-  const totalPow = pow\.reduce((s, v) => s + v, 0);
+  const totalPow = pow.reduce((s, v) => s + v, 0);
   const items = base.map((e, i) => ({ ...e, area: (pow[i] / totalPow) * W * H }));
+
   const rects = layoutTreemap(items, W, H);
+
   const cells = rects.map(r => {
     const cw = r.w - GAP, ch = r.h - GAP;
     const area = cw * ch;
@@ -1931,22 +2126,25 @@ function renderExchanges() {
     const nameSz = Math.min(30, Math.max(9, Math.sqrt(area) * 0.130)).toFixed(1);
     const volSz  = Math.min(16, Math.max(7, Math.sqrt(area) * 0.060)).toFixed(1);
     const chgSz  = Math.min(13, Math.max(6, Math.sqrt(area) * 0.050)).toFixed(1);
-    const inner = \`
-      ${showName ? \`<div style="color:#fff;font-weight:700;font-size:${nameSz}px;line-height:1.05;text-align:center;padding:0 4px">${esc(r.name)}</div>\` : ''}
-      ${showVol  ? \`<div style="color:rgba(255,255,255,.92);font-weight:600;font-size:${volSz}px;margin-top:3px">${fmtLarge(r.vol)}</div>\` : ''}
-      ${showChg  ? \`<div style="color:rgba(255,255,255,.82);font-size:${chgSz}px;margin-top:1px">${fmtPct(r.chg)}</div>\` : ''}\`;
-    return \`<div style="position:absolute;left:${r.x.toFixed(1)}px;top:${r.y.toFixed(1)}px;width:${cw\.toFixed(1)}px;height:${ch.toFixed(1)}px;background:${bg};display:flex;flex-direction:column;justify-content:center;align-items:center;border-radius:3px;overflow:hidden;transition:filter .12s" onmouseover="this.style.filter='brightness(0.82)'" onmouseout="this.style.filter=''">${inner}</div>\`;
+    const inner = `
+      ${showName ? `<div style="color:#fff;font-weight:700;font-size:${nameSz}px;line-height:1.05;text-align:center;padding:0 4px">${esc(r.name)}</div>` : ''}
+      ${showVol  ? `<div style="color:rgba(255,255,255,.92);font-weight:600;font-size:${volSz}px;margin-top:3px">${fmtLarge(r.vol)}</div>` : ''}
+      ${showChg  ? `<div style="color:rgba(255,255,255,.82);font-size:${chgSz}px;margin-top:1px">${fmtPct(r.chg)}</div>` : ''}`;
+    return `<div style="position:absolute;left:${r.x.toFixed(1)}px;top:${r.y.toFixed(1)}px;width:${cw.toFixed(1)}px;height:${ch.toFixed(1)}px;background:${bg};display:flex;flex-direction:column;justify-content:center;align-items:center;border-radius:3px;overflow:hidden;transition:filter .12s" onmouseover="this.style.filter='brightness(0.82)'" onmouseout="this.style.filter=''">${inner}</div>`;
   }).join('');
-  setHTML('custom-heatmap', \`<div style="position:relative;height:${H}px">${cells}</div>\`);
+
+  setHTML('custom-heatmap', `<div style="position:relative;height:${H}px">${cells}</div>`);
   renderHeatDominance();
 }
+
 // ── TREASURIES ───────────────────────────────────────────────────────────────
 // Bandeira como IMAGEM (emoji de bandeira não renderiza no Windows — vira "US"/"KY")
 function flagImg(cc) {
   if (!cc || cc.length !== 2) return '';
   const c = cc.toLowerCase();
-  return \`<img src="https://flagcdn.com/24x18/${c}.png" srcset="https://flagcdn.com/48x36/${c}.png 2x" width="24" height="18" loading="lazy" alt="${esc(cc)}" style="border-radius:3px;vertical-align:middle;object-fit:cover;box-shadow:0 0 0 1px rgba(0,0,0,.2)" onerror="this.style.display='none'">\`;
+  return `<img src="https://flagcdn.com/24x18/${c}.png" srcset="https://flagcdn.com/48x36/${c}.png 2x" width="24" height="18" loading="lazy" alt="${esc(cc)}" style="border-radius:3px;vertical-align:middle;object-fit:cover;box-shadow:0 0 0 1px rgba(0,0,0,.2)" onerror="this.style.display='none'">`;
 }
+
 function loadTreasuries() {
   const tt = el('treas-title');
   if (tt) tt.textContent = treasCoin === 'bitcoin'
@@ -1955,40 +2153,43 @@ function loadTreasuries() {
   const T = SNAP && SNAP.treasuries;
   const tr = T && T[treasCoin];
   if (!tr || !tr.companies || !tr.companies.length) {
-    setHTML('treasuries-section', \`<div class="err">${t('nodata')}</div>\`);
+    setHTML('treasuries-section', `<div class="err">${t('nodata')}</div>`);
     return;
   }
   const isBtc = treasCoin === 'bitcoin';
   const tick  = isBtc ? '₿' : 'Ξ';
   const unit  = isBtc ? 'BTC' : 'ETH';
   const fmtCoin = n => nf(n || 0, 0);
-  const bigStat = (label, val) => \`<div style="grid-column:1;grid-row:1 / span 2;background:var(--bg3);border:1px solid var(--accent);border-radius:14px;padding:18px 16px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
+  const bigStat = (label, val) => `<div style="grid-column:1;grid-row:1 / span 2;background:var(--bg3);border:1px solid var(--accent);border-radius:14px;padding:18px 16px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
       <div style="color:var(--sub);font-size:.8rem;text-transform:uppercase;letter-spacing:.7px;margin-bottom:10px">${label}</div>
-      <div style="font-weight:800;font-size:2.5rem;line-height:1;color:var(--accent)">${val}</div></div>\`;
-  const smallStat = (label, val) => \`<div style="background:var(--bg3);border-radius:10px;padding:13px 14px;text-align:center;display:flex;flex-direction:column;justify-content:center">
+      <div style="font-weight:800;font-size:2.5rem;line-height:1;color:var(--accent)">${val}</div></div>`;
+  const smallStat = (label, val) => `<div style="background:var(--bg3);border-radius:10px;padding:13px 14px;text-align:center;display:flex;flex-direction:column;justify-content:center">
       <div style="color:var(--sub);font-size:.68rem;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px">${label}</div>
-      <div style="font-weight:800;font-size:1.25rem">${val}</div></div>\`;
-  const head = \`<div class="rsplit" style="display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:10px;margin-bottom:16px">
-    ${bigStat(t('total_in') + ' ' + unit, \`${tick} ${fmtCoin(tr.total_holdings)}\`)}
+      <div style="font-weight:800;font-size:1.25rem">${val}</div></div>`;
+
+  const head = `<div class="rsplit" style="display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:10px;margin-bottom:16px">
+    ${bigStat(t('total_in') + ' ' + unit, `${tick} ${fmtCoin(tr.total_holdings)}`)}
     ${smallStat(t('mktcap'), fmtLarge(tr.total_value_usd))}
     ${smallStat(t('pct_supply'), nf(tr.dominance || 0, 2) + '%')}
-  </div>\`;
+  </div>`;
+
   const th = 'text-align:left;padding:9px 8px;color:var(--sub);font-size:.7rem;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--border)';
   const td = 'padding:11px 8px;border-bottom:1px solid var(--border)';
   const N = 15;
-  const rows = tr.companies.slice(0, N).map((c, i) => \`
+  const rows = tr.companies.slice(0, N).map((c, i) => `
     <tr>
       <td style="${td};color:var(--sub);font-size:.85rem;text-align:center;width:26px">${i + 1}</td>
       <td style="${td}">
         <span style="margin-right:8px">${flagImg(c.country)}</span>
         <span style="font-weight:700">${esc(c.name || '')}</span>
-        ${c.symbol ? \`<span style="color:var(--sub);font-size:.8rem;margin-left:6px">${esc(c.symbol)}</span>\` : ''}
+        ${c.symbol ? `<span style="color:var(--sub);font-size:.8rem;margin-left:6px">${esc(c.symbol)}</span>` : ''}
       </td>
       <td style="${td};text-align:right;font-weight:700;white-space:nowrap">${tick} ${fmtCoin(c.holdings)}</td>
       <td style="${td};text-align:right;font-weight:700;white-space:nowrap">${fmtLarge(c.value_usd)}</td>
       <td style="${td};text-align:right;color:var(--sub);font-size:.85rem;white-space:nowrap">${nf(c.pct_supply || 0, 3)}%</td>
-    </tr>\`).join('');
-  setHTML('treasuries-section', \`${head}
+    </tr>`).join('');
+
+  setHTML('treasuries-section', `${head}
     <div style="overflow-x:auto">
     <table style="width:100%;border-collapse:collapse">
       <thead><tr>
@@ -2000,16 +2201,19 @@ function loadTreasuries() {
       </tr></thead>
       <tbody>${rows}</tbody>
     </table></div>
-    <div style="text-align:right;color:var(--dim);font-size:.72rem;margin-top:8px">Top ${Math.min(N, tr.companies.length)} ${LOCALE === 'pt-BR' ? 'de' : 'of'} ${tr.count} ${t('treas_foot')}</div>\`);
+    <div style="text-align:right;color:var(--dim);font-size:.72rem;margin-top:8px">Top ${Math.min(N, tr.companies.length)} ${LOCALE === 'pt-BR' ? 'de' : 'of'} ${tr.count} ${t('treas_foot')}</div>`);
 }
+
 // ── REDE BITCOIN (blockchain stats) ───────────────────────────────────────────
 function loadChainStats() {
   const c = SNAP && SNAP.chainstats;
-  if (!c || !c.height) { setHTML('chainstats-section', \`<div class="err">${t('nodata')}</div>\`); return; }
+  if (!c || !c.height) { setHTML('chainstats-section', `<div class="err">${t('nodata')}</div>`); return; }
   set('kpi-btc-block', (LOCALE === 'pt-BR' ? 'Bloco ' : 'Block ') + '#' + nf(c.height));   // bloco atual no card do BTC
   const mmss = mins => { const m = Math.floor(mins); const s = Math.round((mins - m) * 60); return m + 'min ' + String(s).padStart(2, '0') + 's'; };
+
   let since = '—';
   if (c.last_block_ts) { let s = Math.max(0, Math.floor(Date.now() / 1000 - c.last_block_ts)); const m = Math.floor(s / 60); since = m + 'min ' + String(s % 60).padStart(2, '0') + 's'; }
+
   const rows = [
     [t('cs_height'), nf(c.height)],
     [t('cs_since'),  since],
@@ -2019,27 +2223,28 @@ function loadChainStats() {
     [t('cs_size'),   c.chain_size_gb ? nf(c.chain_size_gb, 2) + ' GB' : '—'],
     [t('cs_tx'),     nf(c.total_tx)],
   ];
-  const rowsHtml = rows.map(([l, v]) => \`<div style="display:flex;justify-content:space-between;align-items:center;padding:11px 4px;border-bottom:1px solid var(--border);gap:12px">
+  const rowsHtml = rows.map(([l, v]) => `<div style="display:flex;justify-content:space-between;align-items:center;padding:11px 4px;border-bottom:1px solid var(--border);gap:12px">
       <span style="color:var(--sub);font-size:.85rem">${l}</span>
-      <span style="font-weight:700;font-size:.95rem;white-space:nowrap;text-align:right">${v}</span></div>\`).join('');
-  setHTML('chainstats-section', \`
+      <span style="font-weight:700;font-size:.95rem;white-space:nowrap;text-align:right">${v}</span></div>`).join('');
+  setHTML('chainstats-section', `
     <div class="rsplit" style="display:grid;grid-template-columns:35fr 65fr;gap:24px;align-items:center">
       <div style="min-width:0">${rowsHtml}</div>
       <div style="min-width:0">${issuedDonut(c.supply_pct || 0, c.supply_btc)}</div>
-    </div>\`);
+    </div>`);
 }
+
 function issuedDonut(pct, supplyBtc) {
   const cx = 150, cy = 150, ro = 128, ri = 86;
   const polar = (r, deg) => { const a = (deg - 90) * Math.PI / 180; return { x: cx + r * Math.cos(a), y: cy + r * Math.sin(a) }; };
   const sector = (s, e, fill) => {
     const large = (e - s > 180) ? 1 : 0;
     const o1 = polar(ro, s), o2 = polar(ro, e), i2 = polar(ri, e), i1 = polar(ri, s);
-    return \`<path d="M${o1.x.toFixed(1)},${o1.y.toFixed(1)} A${ro},${ro} 0 ${large} 1 ${o2.x.toFixed(1)},${o2.y.toFixed(1)} L${i2.x.toFixed(1)},${i2.y.toFixed(1)} A${ri},${ri} 0 ${large} 0 ${i1.x.toFixed(1)},${i1.y.toFixed(1)} Z" fill="${fill}"/>\`;
+    return `<path d="M${o1.x.toFixed(1)},${o1.y.toFixed(1)} A${ro},${ro} 0 ${large} 1 ${o2.x.toFixed(1)},${o2.y.toFixed(1)} L${i2.x.toFixed(1)},${i2.y.toFixed(1)} A${ri},${ri} 0 ${large} 0 ${i1.x.toFixed(1)},${i1.y.toFixed(1)} Z" fill="${fill}"/>`;
   };
   const deg = Math.min(359.99, Math.max(0, pct) / 100 * 360);
   const rest = deg < 359.99 ? sector(deg, 360, '#33333b') : '';
   const supply = supplyBtc ? nf(supplyBtc, 0) : '—';
-  return \`<svg viewBox="0 0 300 300" style="width:100%;max-width:330px;display:block;margin:0 auto">
+  return `<svg viewBox="0 0 300 300" style="width:100%;max-width:330px;display:block;margin:0 auto">
     <defs>
       <linearGradient id="bc-iss" x1="0" y1="0" x2="1" y2="1">
         <stop offset="0%" stop-color="#ffb24d"/><stop offset="60%" stop-color="#f7931a"/><stop offset="100%" stop-color="#e07b08"/>
@@ -2050,13 +2255,14 @@ function issuedDonut(pct, supplyBtc) {
     <text x="150" y="122" text-anchor="middle" fill="#888" font-size="13" letter-spacing="2" font-family="'IBM Plex Mono',ui-monospace,monospace">${t('issued')}</text>
     <text x="150" y="162" text-anchor="middle" fill="#f7931a" font-size="38" font-weight="800" font-family="'IBM Plex Mono',ui-monospace,monospace">${nf(pct, 2)}%</text>
     <text x="150" y="188" text-anchor="middle" fill="#9a9a9a" font-size="12.5" font-family="'IBM Plex Mono',ui-monospace,monospace">${supply} / 21M BTC</text>
-  </svg>\`;
+  </svg>`;
 }
+
 // ── GÁS DAS REDES EVM ─────────────────────────────────────────────────────────
 function loadGas() {
   const g = SNAP && SNAP.gas;
-  if (!g || !g.length) { setHTML('gas-section', \`<div class="err">${t('nodata')}</div>\`); return; }
-  // KPI ETH (card 2): gás da rede Ethereum em gwei + custo \~USD de uma transferência (21k gas)
+  if (!g || !g.length) { setHTML('gas-section', `<div class="err">${t('nodata')}</div>`); return; }
+  // KPI ETH (card 2): gás da rede Ethereum em gwei + custo ~USD de uma transferência (21k gas)
   const ethGas = g.find(x => x.name === 'Ethereum');
   if (ethGas) {
     const ec = allCoins.find(x => x.symbol.toLowerCase() === 'eth');
@@ -2064,7 +2270,7 @@ function loadGas() {
     let usdStr = '';
     if (ec && ec.current_price) {
       const usd = ethGas.gwei * 21000 / 1e9 * ec.current_price;
-      usdStr = ' (\~' + (usd < 0.01 ? '< $' + nf(0.01, 2) : '$' + nf(usd, 2)) + ')';
+      usdStr = ' (~' + (usd < 0.01 ? '< $' + nf(0.01, 2) : '$' + nf(usd, 2)) + ')';
     }
     set('kpi-eth-gas', gw + ' gwei' + usdStr);
   }
@@ -2072,45 +2278,47 @@ function loadGas() {
   const tiles = g.map(x => {
     const coin = findCoin(x.native);
     const p = coin ? coin.current_price : null;
-    const icon = (coin && coin.image) ? \`<img src="${esc(coin.image)}" style="width:22px;height:22px;border-radius:50%;margin-right:7px;vertical-align:middle" onerror="this.style.display='none'">\` : '';
+    const icon = (coin && coin.image) ? `<img src="${esc(coin.image)}" style="width:22px;height:22px;border-radius:50%;margin-right:7px;vertical-align:middle" onerror="this.style.display='none'">` : '';
     const usd = p ? (x.gwei * 21000 / 1e9 * p) : null;   // custo de uma transferência simples (21k gas)
     const usdStr = usd != null ? (usd < 0.01 ? '< $' + nf(0.01, 2) : '$' + nf(usd, 2)) : '';
     const gwei = x.gwei < 1 ? nf(x.gwei, 3) : nf(x.gwei, 0, 1);
-    return \`<div style="background:var(--bg3);border-radius:12px;padding:15px 14px;text-align:center">
+    return `<div style="background:var(--bg3);border-radius:12px;padding:15px 14px;text-align:center">
       <div style="font-size:.92rem;font-weight:700;margin-bottom:9px;display:flex;align-items:center;justify-content:center">${icon}<span>${esc(x.name)}</span></div>
       <div style="font-size:1.55rem;font-weight:800;color:var(--accent);line-height:1">${gwei}<span style="font-size:.68rem;color:var(--sub);font-weight:600"> gwei</span></div>
-      ${usdStr ? \`<div style="color:var(--sub);font-size:.78rem;margin-top:7px">\~${usdStr} ${t('per_tx')}</div>\` : ''}
-    </div>\`;
+      ${usdStr ? `<div style="color:var(--sub);font-size:.78rem;margin-top:7px">~${usdStr} ${t('per_tx')}</div>` : ''}
+    </div>`;
   }).join('');
-  setHTML('gas-section', \`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">${tiles}</div>\`);
+  setHTML('gas-section', `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">${tiles}</div>`);
 }
+
 // ── MAIORES ALTAS & QUEDAS (24h) ──────────────────────────────────────────────
-// Top 5 de cada lado dentro do top 100, sem stablecoins/wrapped (variação \~0%).
+// Top 5 de cada lado dentro do top 100, sem stablecoins/wrapped (variação ~0%).
 function renderMovers() {
   const box = el('movers-section');
   if (!box || !allCoins.length) return;
   const pool = allCoins.filter(c => c && c.symbol && !STABLECOINS.has(c.symbol.toLowerCase())
     && c.price_change_percentage_24h != null);
-  if (!pool.length) { box.innerHTML = \`<div class="err">${t('nodata')}</div>\`; return; }
+  if (!pool.length) { box.innerHTML = `<div class="err">${t('nodata')}</div>`; return; }
   // Só quem realmente subiu/caiu — num dia todo vermelho a coluna de altas não
   // pode mostrar moeda caindo (e vice-versa)
   const ups = pool.filter(c => c.price_change_percentage_24h > 0)
     .sort((a, b) => b.price_change_percentage_24h - a.price_change_percentage_24h).slice(0, 5);
   const dns = pool.filter(c => c.price_change_percentage_24h < 0)
     .sort((a, b) => a.price_change_percentage_24h - b.price_change_percentage_24h).slice(0, 5);
-  const row = (c, i) => \`<div class="mv-row">
+  const row = (c, i) => `<div class="mv-row">
       <span class="mv-rank">${i + 1}</span>
       <img src="${esc(c.image || '')}" style="width:34px;height:34px;border-radius:50%;object-fit:cover;flex-shrink:0" alt="" onerror="this.style.display='none'" loading="lazy">
       <div style="min-width:0"><div class="mv-name">${esc(c.name)}</div><div class="mv-sym">${esc(c.symbol)}</div></div>
       <span class="mv-px">${fmtPrice(c.current_price)}</span>
       ${pctCell(c.price_change_percentage_24h)}
-    </div>\`;
-  const none = key => \`<div class="loading" style="padding:12px 0">${t(key)}</div>\`;
-  box.innerHTML = \`<div class="rsplit" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+    </div>`;
+  const none = key => `<div class="loading" style="padding:12px 0">${t(key)}</div>`;
+  box.innerHTML = `<div class="rsplit" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
     <div style="min-width:0"><div class="mv-col-title" style="color:var(--green)">${t('movers_up')}</div>${ups.length ? ups.map(row).join('') : none('movers_none_up')}</div>
     <div style="min-width:0"><div class="mv-col-title" style="color:var(--red)">${t('movers_down')}</div>${dns.length ? dns.map(row).join('') : none('movers_none_down')}</div>
-  </div>\`;
+  </div>`;
 }
+
 // ── BTC vs GIGANTES ───────────────────────────────────────────────────────────
 // Top 20 dos maiores ativos do mundo (ações/ouro/prata/ETFs — market cap AO VIVO do
 // poller) com o BTC entrando AO VIVO (market cap CoinGecko). Se o BTC estiver dentro
@@ -2149,26 +2357,28 @@ const GIANT_STYLE = {
   XOM:     { ico: '⛽', grad: ['#ff9e80', '#c8102e'] },
   '2222':  { ico: '🛢️', grad: ['#4ecf8e', '#00843d'] },
 };
+
 function giantRow(it, rankLabel, max, opts) {
   opts = opts || {};
   const st = GIANT_STYLE[it.sym] || { ico: '·', grad: ['#9a9ab2', '#5f5f74'] };
   const w = Math.max(1.2, it.mcap / max * 100).toFixed(1);
   const chip = it.sym === 'BTC'
-    ? \`<span class="gt-ico" style="background:linear-gradient(135deg,${st.grad[0]},${st.grad[1]})">${st.ico}</span>\`
-    : \`<span class="gt-ico" style="background:linear-gradient(135deg,${st.grad[1]}26,${st.grad[1]}55);border:1px solid ${st.grad[1]}66;font-size:1.12rem">${st.ico}</span>\`;
-  return \`<div class="gt-row${opts.btc ? ' gt-btc' : ''}">
+    ? `<span class="gt-ico" style="background:linear-gradient(135deg,${st.grad[0]},${st.grad[1]})">${st.ico}</span>`
+    : `<span class="gt-ico" style="background:linear-gradient(135deg,${st.grad[1]}26,${st.grad[1]}55);border:1px solid ${st.grad[1]}66;font-size:1.12rem">${st.ico}</span>`;
+  return `<div class="gt-row${opts.btc ? ' gt-btc' : ''}">
     <span class="gt-rank">${rankLabel}</span>
     ${chip}
     <div class="gt-name"><b>${esc(it.name)}${opts.btc ? ' 👑' : ''}</b><span>${esc(it.sub || '')}</span></div>
     <div class="gt-track"><div class="gt-fill" style="width:${w}%;background:linear-gradient(90deg,${st.grad[1]},${st.grad[0]})${opts.btc ? ';box-shadow:0 0 14px rgba(247,147,26,.75)' : ''}"></div></div>
     <span class="gt-val"${opts.btc ? ' style="color:var(--accent)"' : ''}>${fmtLarge(it.mcap)}</span>
-  </div>\`;
+  </div>`;
 }
+
 function loadGiants() {
   const box = el('giants-section');
   if (!box) return;
   const g = (SNAP && SNAP.giants) || [];
-  if (!g.length) { box.innerHTML = \`<div class="loading">${t('loading')}</div>\`; return; }
+  if (!g.length) { box.innerHTML = `<div class="loading">${t('loading')}</div>`; return; }
   const rename = { GOLD: t('gold'), SILVER: t('silver') };
   const items = g.filter(a => a && a.mcap > 0).map(a => ({
     sym: a.sym, mcap: a.mcap,
@@ -2181,49 +2391,56 @@ function loadGiants() {
   const max = items[0].mcap || 1;
   const btcRank = items.findIndex(i => i.sym === 'BTC') + 1;
   const rk = n => LOCALE === 'pt-BR' ? n + 'º' : '#' + n;
+
   let head = '';
   if (btcRank > 0) {
-    const rankHtml = \`<span style="color:var(--accent);font-weight:800;font-size:1.7rem;font-family:'IBM Plex Mono',ui-monospace,monospace">${rk(btcRank)}</span>\`;
-    head = \`<div style="text-align:center;margin:2px 0 16px;font-size:1.12rem">\` +
+    const rankHtml = `<span style="color:var(--accent);font-weight:800;font-size:1.7rem;font-family:'IBM Plex Mono',ui-monospace,monospace">${rk(btcRank)}</span>`;
+    head = `<div style="text-align:center;margin:2px 0 16px;font-size:1.12rem">` +
       (LOCALE === 'pt-BR'
-        ? \`O <b>Bitcoin</b> é o ${rankHtml} maior ativo do mundo 🌍\`
-        : \`<b>Bitcoin</b> is the ${rankHtml} largest asset in the world 🌍\`) +
-      \`<div style="color:var(--sub);font-size:.78rem;margin-top:3px">${t('giants_sub')}</div></div>\`;
+        ? `O <b>Bitcoin</b> é o ${rankHtml} maior ativo do mundo 🌍`
+        : `<b>Bitcoin</b> is the ${rankHtml} largest asset in the world 🌍`) +
+      `<div style="color:var(--sub);font-size:.78rem;margin-top:3px">${t('giants_sub')}</div></div>`;
   }
+
   // Top 20 sempre; se o BTC estiver ABAIXO do 20º, mostra o Top 20 + separador + o BTC na posição real
   let rows;
   if (btcRank > 0 && btcRank > GIANTS_TOP) {
     const top = items.slice(0, GIANTS_TOP).map((it, i) => giantRow(it, rk(i + 1), max, {})).join('');
     const btcItem = items[btcRank - 1];
-    rows = top + \`<div class="gt-gap">${t('giants_gap')}</div>\` + giantRow(btcItem, rk(btcRank), max, { btc: true });
+    rows = top + `<div class="gt-gap">${t('giants_gap')}</div>` + giantRow(btcItem, rk(btcRank), max, { btc: true });
   } else {
     rows = items.slice(0, GIANTS_TOP).map((it, i) => giantRow(it, rk(i + 1), max, { btc: it.sym === 'BTC' })).join('');
   }
-  box.innerHTML = \`${head}${rows}
-    <div style="text-align:center;color:var(--dim);font-size:.7rem;margin-top:14px">${t('giants_foot')}</div>\`;
+
+  box.innerHTML = `${head}${rows}
+    <div style="text-align:center;color:var(--dim);font-size:.7rem;margin-top:14px">${t('giants_foot')}</div>`;
 }
+
 // ── COUNTDOWN DO HALVING ──────────────────────────────────────────────────────
 // Próximo halving no bloco 1.050.000 (época atual começou no 840.000). A altura
-// vem do snapshot (chainstats, \~5 min); o relógio tica localmente a cada 1s
-// assumindo \~10 min/bloco e re-ancora quando a altura muda.
+// vem do snapshot (chainstats, ~5 min); o relógio tica localmente a cada 1s
+// assumindo ~10 min/bloco e re-ancora quando a altura muda.
 const HV_NEXT = 1050000, HV_PREV = 840000, HV_EPOCH = 210000;
 let HV = { target: 0, height: 0, rendered: 0, locale: null };
+
 function loadHalving() {
   const box = el('halving-section');
   if (!box) return;
   const c = SNAP && SNAP.chainstats;
-  if (!c || !c.height) { box.innerHTML = \`<div class="err">${t('nodata')}</div>\`; return; }
+  if (!c || !c.height) { box.innerHTML = `<div class="err">${t('nodata')}</div>`; return; }
   const left = Math.max(0, HV_NEXT - c.height);
   if (c.height !== HV.height || !HV.target) {
     HV.height = c.height;
-    HV.target = Date.now() + left * 600 * 1000;   // \~10 min por bloco
+    HV.target = Date.now() + left * 600 * 1000;   // ~10 min por bloco
   }
   if (HV.rendered === c.height && HV.locale === LOCALE && el('hv-d')) return;   // só o tick de 1s trabalha
   HV.rendered = c.height; HV.locale = LOCALE;
+
   const prog = Math.min(100, Math.max(0, (c.height - HV_PREV) / HV_EPOCH * 100));
   const estStr = new Date(HV.target).toLocaleDateString(LOCALE, { day: 'numeric', month: 'long', year: 'numeric' });
-  const boxHtml = (id, lbl) => \`<div class="hv-box"><div class="hv-num" id="${id}">—</div><div class="hv-lbl">${lbl}</div></div>\`;
-  box.innerHTML = \`
+  const boxHtml = (id, lbl) => `<div class="hv-box"><div class="hv-num" id="${id}">—</div><div class="hv-lbl">${lbl}</div></div>`;
+
+  box.innerHTML = `
     <div style="text-align:center;color:var(--sub);font-size:.8rem;margin-bottom:14px">${t('halving_sub')}</div>
     <div class="hv-clock">
       ${boxHtml('hv-d', t('hv_days'))}<span class="hv-sep">:</span>
@@ -2247,9 +2464,10 @@ function loadHalving() {
       <div class="hv-tile"><div class="hv-tile-l">${t('hv_date')}</div><div class="hv-tile-v" style="font-size:.98rem">${estStr}</div></div>
       <div class="hv-tile"><div class="hv-tile-l">${t('hv_height')}</div><div class="hv-tile-v">${nf(c.height)}</div></div>
       <div class="hv-tile"><div class="hv-tile-l">${t('hv_reward')}</div><div class="hv-tile-v">${nf(3.125, 3)} → ${nf(1.5625, 4)} BTC</div></div>
-    </div>\`;
+    </div>`;
   hvTick();
 }
+
 function hvTick() {
   if (!HV.target) return;
   const dEl = el('hv-d');
@@ -2263,10 +2481,12 @@ function hvTick() {
   set('hv-m', String(m).padStart(2, '0'));
   set('hv-s', String(s).padStart(2, '0'));
 }
+
 // ── MODO TV ───────────────────────────────────────────────────────────────────
 // Passeia pelas seções sozinho (ideal p/ deixar rodando na live). SÓ liga por
 // clique no botão 📺 do header ou abrindo a página com #tv. Esc sai.
 const TV = { on: false, idx: 0, timer: null, paused: false, secs: 12 };
+
 function tvSections() {
   return ['sec-heatmap', 'sec-top', 'sec-movers', 'sec-dom', 'sec-dollar',
           'sec-fg', 'sec-stable', 'sec-mvrv', 'sec-data', 'sec-reserva', 'sec-rede',
@@ -2274,6 +2494,7 @@ function tvSections() {
     .map(id => document.getElementById(id))
     .filter(s => s && !s.classList.contains('collapsed'));
 }
+
 function tvGo(i) {
   const list = tvSections();
   if (!list.length) return;
@@ -2291,10 +2512,12 @@ function tvGo(i) {
     }
   }
 }
+
 function tvRestartTimer() {
   clearInterval(TV.timer);
   TV.timer = setInterval(() => { if (!TV.paused) tvGo(TV.idx + 1); }, TV.secs * 1000);
 }
+
 function tvPauseToggle() {
   TV.paused = !TV.paused;
   const b = el('tv-pause');
@@ -2305,6 +2528,7 @@ function tvPauseToggle() {
     else { tvGo(TV.idx); tvRestartTimer(); }
   }
 }
+
 function tvStart() {
   if (TV.on) return;
   TV.on = true; TV.paused = false;
@@ -2314,7 +2538,7 @@ function tvStart() {
     if (p && p.catch) p.catch(() => {});   // sem gesto (link #tv) o fullscreen pode ser negado — segue sem
   } catch (e) {}
   if (!el('tv-overlay')) {
-    document.body.insertAdjacentHTML('beforeend', \`<div id="tv-overlay">
+    document.body.insertAdjacentHTML('beforeend', `<div id="tv-overlay">
       <span class="tv-ic">📺</span>
       <span id="tv-label"></span>
       <button class="tvbtn" id="tv-prev">⏮</button>
@@ -2322,7 +2546,7 @@ function tvStart() {
       <button class="tvbtn" id="tv-next">⏭</button>
       <button class="tvbtn" id="tv-stop">✕</button>
       <div id="tv-track"><div id="tv-bar"></div></div>
-    </div>\`);
+    </div>`);
     el('tv-stop').addEventListener('click', tvStop);
     el('tv-pause').addEventListener('click', tvPauseToggle);
     el('tv-prev').addEventListener('click', () => { tvGo(TV.idx - 1); tvRestartTimer(); });
@@ -2336,6 +2560,7 @@ function tvStart() {
   tvGo(0);
   tvRestartTimer();
 }
+
 function tvStop() {
   if (!TV.on) return;
   TV.on = false;
@@ -2345,6 +2570,7 @@ function tvStop() {
   if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(() => {});
   if (location.hash === '#tv') history.replaceState(null, '', location.pathname + location.search);
 }
+
 // ── MVRV (CoinMetrics Community, grátis) ───────────────────────────────────────
 // Gráfico histórico estilo Bitbo: área do MVRV preenchida desde a base (0),
 // VERDE quando ≥1 e VERMELHO (destacado) quando <1; linha de preço (log) e preço
@@ -2363,20 +2589,23 @@ function mvrvNiceStep(range, target) {                               // passo "r
   const raw = range / target, mag = Math.pow(10, Math.floor(Math.log10(raw))), n = raw / mag;
   return (n < 1.5 ? 1 : n < 3 ? 2 : n < 7 ? 5 : 10) * mag;
 }
+
 async function loadMVRV() {
   if (!MVRV_DATA) {
     const d = await get('mvrv.json?_=' + Math.floor(Date.now() / 3600000), 20000);  // cache-buster por hora
     if (d && Array.isArray(d.mvrv) && d.mvrv.length) MVRV_DATA = d;
   }
-  if (!MVRV_DATA) { setHTML('mvrv-chart', \`<div class="loading">${t('nodata')}</div>\`); return; }
+  if (!MVRV_DATA) { setHTML('mvrv-chart', `<div class="loading">${t('nodata')}</div>`); return; }
   try { renderMVRV(MVRV_DATA); } catch (e) { console.warn('mvrv render falhou:', e); }
   try { renderTimeMachine(); } catch (e) { console.warn('time machine falhou:', e); }
 }
+
 function renderMVRV(D) {
   let mv = D.mvrv, pr = D.price;
   let startMs = new Date(D.start + 'T00:00:00Z').getTime();
   const dayMs = 86400000;
-  // O início (microcap, 2010) tem MVRV absurdo (chegou a \~146) e estoura o eixo.
+
+  // O início (microcap, 2010) tem MVRV absurdo (chegou a ~146) e estoura o eixo.
   // Removemos a "ponta" inicial em que MVRV > 8 p/ ficar na escala do Bitbo (0–8).
   let off = 0;
   while (off < mv.length && (mv[off] == null || mv[off] > 8)) off++;
@@ -2389,16 +2618,17 @@ function renderMVRV(D) {
   mv = mv.slice(viewStart, viewEnd + 1); pr = pr.slice(viewStart, viewEnd + 1);
   startMs += viewStart * dayMs;
   const N = mv.length, zoomed = !!MVRV_ZOOM;
+
   let pMin = Infinity, pMax = 0;
   const finite = [];
   for (let i = 0; i < N; i++) {
     if (mv[i] != null) finite.push(mv[i]);
     if (pr[i] != null && pr[i] > 0) { if (pr[i] < pMin) pMin = pr[i]; if (pr[i] > pMax) pMax = pr[i]; }
   }
-  if (!(pMax > 0) || !finite.length) { setHTML('mvrv-chart', \`<div class="loading">${t('nodata')}</div>\`); return; }
+  if (!(pMax > 0) || !finite.length) { setHTML('mvrv-chart', `<div class="loading">${t('nodata')}</div>`); return; }
   finite.sort((a, b) => a - b);
   const p995 = finite[Math.floor(0.995 * finite.length)] || 8;
-  const AXMAX = Math.max(8, Math.ceil(p995));            // topo do eixo MVRV (\~8, estilo Bitbo)
+  const AXMAX = Math.max(8, Math.ceil(p995));            // topo do eixo MVRV (~8, estilo Bitbo)
   // Domínio vertical do MVRV: cheio = 0..8; com zoom = ajusta ao trecho (amplia o MVRV)
   let mvLo = 0, mvHi = AXMAX;
   if (zoomed) {
@@ -2406,12 +2636,14 @@ function renderMVRV(D) {
     mvLo = Math.max(0, sMin - pad); mvHi = sMax + pad;
   }
   const lpMin = Math.floor(Math.log10(pMin)), lpMax = Math.ceil(Math.log10(pMax));
+
   const W = 1000, H = 470, mL = 40, mR = 64, mT = 22, mB = 42;
   const x0 = mL, x1 = W - mR, y0 = mT, y1 = H - mB;
   const sx   = i => x0 + (N <= 1 ? 0 : i / (N - 1) * (x1 - x0));
   const syMv = v => y1 - ((Math.min(Math.max(v, mvLo), mvHi) - mvLo) / (mvHi - mvLo)) * (y1 - y0);
   const syP  = p => y1 - ((Math.log10(p) - lpMin) / (lpMax - lpMin)) * (y1 - y0);
   const F = n => n.toFixed(1);
+
   // ---- grade + eixo X (anos na visão cheia; meses quando o zoom encurta o período) ----
   let grid = '', axX = '';
   if (N > 1000) {                                  // visão longa → anos
@@ -2421,8 +2653,8 @@ function renderMVRV(D) {
       const idx = Math.round((Date.UTC(yr, 0, 1) - startMs) / dayMs);
       if (idx < 0 || idx > N - 1) continue;
       const X = sx(idx);
-      grid += \`<line x1="${F(X)}" y1="${y0}" x2="${F(X)}" y2="${y1}" stroke="var(--border)" stroke-width="0.4"/>\`;
-      if (yr % yStep === 0) axX += \`<text x="${F(X)}" y="${y1 + 15}" text-anchor="middle" font-size="10" fill="var(--sub)">${yr}</text>\`;
+      grid += `<line x1="${F(X)}" y1="${y0}" x2="${F(X)}" y2="${y1}" stroke="var(--border)" stroke-width="0.4"/>`;
+      if (yr % yStep === 0) axX += `<text x="${F(X)}" y="${y1 + 15}" text-anchor="middle" font-size="10" fill="var(--sub)">${yr}</text>`;
     }
   } else {                                         // zoom → meses
     const d0 = new Date(startMs); let yy = d0.getUTCFullYear(), mm = d0.getUTCMonth();
@@ -2436,22 +2668,24 @@ function renderMVRV(D) {
     const mStep = months.length > 16 ? 3 : (months.length > 8 ? 2 : 1);
     months.forEach((mo, j) => {
       const X = sx(mo.idx);
-      grid += \`<line x1="${F(X)}" y1="${y0}" x2="${F(X)}" y2="${y1}" stroke="var(--border)" stroke-width="0.4"/>\`;
+      grid += `<line x1="${F(X)}" y1="${y0}" x2="${F(X)}" y2="${y1}" stroke="var(--border)" stroke-width="0.4"/>`;
       if (j % mStep === 0) {
         const lab = new Date(Date.UTC(mo.y, mo.m, 1)).toLocaleDateString(LOCALE, { month: 'short' }).replace('.', '') + '/' + String(mo.y).slice(2);
-        axX += \`<text x="${F(X)}" y="${y1 + 15}" text-anchor="middle" font-size="10" fill="var(--sub)">${lab}</text>\`;
+        axX += `<text x="${F(X)}" y="${y1 + 15}" text-anchor="middle" font-size="10" fill="var(--sub)">${lab}</text>`;
       }
     });
   }
+
   // ---- eixo MVRV (esq) — ticks "redondos" dentro do domínio visível ----
   let axMv = '';
   const stepMv = mvrvNiceStep(mvHi - mvLo, 7);
   const decM = stepMv >= 1 ? 0 : (stepMv < 0.5 ? 2 : 1);
   for (let v = Math.ceil(mvLo / stepMv) * stepMv; v <= mvHi + 1e-9; v += stepMv) {
     const Y = syMv(v);
-    grid += \`<line x1="${x0}" y1="${F(Y)}" x2="${x1}" y2="${F(Y)}" stroke="var(--border)" stroke-width="0.4"/>\`;
-    axMv += \`<text x="${x0 - 6}" y="${F(Y + 3)}" text-anchor="end" font-size="11" fill="var(--sub)">${nf(v, decM)}</text>\`;
+    grid += `<line x1="${x0}" y1="${F(Y)}" x2="${x1}" y2="${F(Y)}" stroke="var(--border)" stroke-width="0.4"/>`;
+    axMv += `<text x="${x0 - 6}" y="${F(Y + 3)}" text-anchor="end" font-size="11" fill="var(--sub)">${nf(v, decM)}</text>`;
   }
+
   // ---- eixo preço (dir, log 1-2-5) ----
   let axP = '';
   for (let e = lpMin; e <= lpMax; e++) for (const m of [1, 2, 5]) {
@@ -2459,8 +2693,9 @@ function renderMVRV(D) {
     if (val < pMin * 0.85 || val > pMax * 1.15) continue;
     const Y = syP(val);
     if (Y < y0 - 1 || Y > y1 + 1) continue;
-    axP += \`<text x="${x1 + 6}" y="${F(Y + 3)}" text-anchor="start" font-size="10" fill="var(--sub)">${mvrvAxisPrice(val)}</text>\`;
+    axP += `<text x="${x1 + 6}" y="${F(Y + 3)}" text-anchor="start" font-size="10" fill="var(--sub)">${mvrvAxisPrice(val)}</text>`;
   }
+
   // ---- área MVRV: OSCILADOR ancorado na LINHA DO 1 ----
   // verde só ACIMA do 1 (cresce pra cima a partir do 1); vermelho ESPELHADO PRA BAIXO
   // do 1 (cresce pra baixo). A região 0–1 sob o verde fica vazia (estilo Bitbo).
@@ -2484,24 +2719,26 @@ function renderMVRV(D) {
   let areaInner = '', topG = '', topR = '';
   for (const s of segs) {
     if (s.pts.length < 2) continue;
-    let d = \`M${F(s.pts[0].x)},${F(yBase)}\`;
-    for (const p of s.pts) d += \`L${F(p.x)},${F(p.y)}\`;
-    d += \`L${F(s.pts[s.pts.length - 1].x)},${F(yBase)}Z\`;
-    areaInner += \`<path d="${d}" fill="${MVRV_COL[s.z]}" fill-opacity="${s.z === 0 ? 0.95 : 0.78}"/>\`;
+    let d = `M${F(s.pts[0].x)},${F(yBase)}`;
+    for (const p of s.pts) d += `L${F(p.x)},${F(p.y)}`;
+    d += `L${F(s.pts[s.pts.length - 1].x)},${F(yBase)}Z`;
+    areaInner += `<path d="${d}" fill="${MVRV_COL[s.z]}" fill-opacity="${s.z === 0 ? 0.95 : 0.78}"/>`;
     let tl = '', started = false;       // linha do topo (curva, sem os âncoras no 1)
     for (const p of s.pts) { if (Math.abs(p.y - yBase) < 0.01) continue; tl += (started ? 'L' : 'M') + F(p.x) + ',' + F(p.y); started = true; }
     if (s.z === 1) topG += tl; else topR += tl;
   }
-  areaInner += \`<path d="${topG}" fill="none" stroke="${MVRV_COL_HI[1]}" stroke-width="1"/>\`;
-  areaInner += \`<path d="${topR}" fill="none" stroke="${MVRV_COL_HI[0]}" stroke-width="1.6"/>\`;
+  areaInner += `<path d="${topG}" fill="none" stroke="${MVRV_COL_HI[1]}" stroke-width="1"/>`;
+  areaInner += `<path d="${topR}" fill="none" stroke="${MVRV_COL_HI[0]}" stroke-width="1.6"/>`;
+
   // ---- linhas de referência ----
   // MVRV = 3.7: âmbar mais clara/visível, num grupo próprio (toggle pela legenda)
   const ref37 = (3.7 >= mvLo && 3.7 <= mvHi) ?
-    \`<line x1="${x0}" y1="${F(syMv(3.7))}" x2="${x1}" y2="${F(syMv(3.7))}" stroke="#ffd9a8" stroke-opacity="0.35" stroke-width="0.8" stroke-dasharray="2 5"/>\` +
-    \`<text x="${(x0 + x1) / 2}" y="${F(syMv(3.7) - 4)}" text-anchor="middle" font-size="9" font-weight="600" fill="#ffd9a8" fill-opacity="0.55">MVRV = 3.7</text>\` : '';
+    `<line x1="${x0}" y1="${F(syMv(3.7))}" x2="${x1}" y2="${F(syMv(3.7))}" stroke="#ffd9a8" stroke-opacity="0.35" stroke-width="0.8" stroke-dasharray="2 5"/>` +
+    `<text x="${(x0 + x1) / 2}" y="${F(syMv(3.7) - 4)}" text-anchor="middle" font-size="9" font-weight="600" fill="#ffd9a8" fill-opacity="0.55">MVRV = 3.7</text>` : '';
   // MVRV = 1: linha de referência (SEM texto), só se estiver na faixa visível
   const ref1 = (1 >= mvLo && 1 <= mvHi) ?
-    \`<line x1="${x0}" y1="${F(syMv(1))}" x2="${x1}" y2="${F(syMv(1))}" stroke="var(--text)" stroke-opacity="0.5" stroke-width="1" stroke-dasharray="5 4"/>\` : '';
+    `<line x1="${x0}" y1="${F(syMv(1))}" x2="${x1}" y2="${F(syMv(1))}" stroke="var(--text)" stroke-opacity="0.5" stroke-width="1" stroke-dasharray="5 4"/>` : '';
+
   // ---- linhas preço + realizado (log) ----
   let dPrice = '', dReal = '', fp = true, fr = true;
   for (let i = 0; i < N; i++) {
@@ -2511,18 +2748,20 @@ function renderMVRV(D) {
       if (mv[i] != null && mv[i] > 0) { dReal += (fr ? 'M' : 'L') + X + ',' + F(syP(pr[i] / mv[i])); fr = false; }
     }
   }
+
   // ---- bolinha laranja pulsante no ÚLTIMO dado de MVRV (mais recente) — 40% menor ----
   let lastIdx = -1;
   for (let i = N - 1; i >= 0; i--) { if (mv[i] != null) { lastIdx = i; break; } }
   const puX = lastIdx < 0 ? 0 : sx(lastIdx), puY = lastIdx < 0 ? 0 : syMv(mv[lastIdx]);
   const pulse = (lastIdx < 0 || viewEnd !== baseN - 1) ? '' :    // só pulsa se o dado mais recente estiver visível
-    \`<g id="mvrv-pulse" pointer-events="none" style="${MVRV_HIDE.mvrv ? 'display:none' : ''}">
+    `<g id="mvrv-pulse" pointer-events="none" style="${MVRV_HIDE.mvrv ? 'display:none' : ''}">
        <circle cx="${F(puX)}" cy="${F(puY)}" r="2.4" fill="none" stroke="#ffb14e" stroke-width="0.9">
          <animate attributeName="r" values="2.4;7.2" dur="1.8s" repeatCount="indefinite"/>
          <animate attributeName="opacity" values="0.6;0" dur="1.8s" repeatCount="indefinite"/>
        </circle>
        <circle cx="${F(puX)}" cy="${F(puY)}" r="2" fill="#ffb14e"/>
-     </g>\`;
+     </g>`;
+
   // ---- legenda CLICÁVEL (clique liga/desliga a série) ----
   const lgDefs = [
     { s: 'mvrv',  box: MVRV_COL[1],     label: t('mvrv_mvrv') },
@@ -2535,23 +2774,24 @@ function renderMVRV(D) {
     const hid = MVRV_HIDE[it.s];
     const w = it.label.length * 6.3 + 28;
     const mark = it.box
-      ? \`<rect x="${F(lgX)}" y="${y0 + 6}" width="11" height="11" rx="2" fill="${it.box}"/>\`
-      : \`<line x1="${F(lgX)}" y1="${y0 + 12}" x2="${F(lgX + 22)}" y2="${y0 + 12}" stroke="${it.line}" stroke-width="2.8"${it.dash ? \` stroke-dasharray="${it.dash}"\` : ''}/>\`;
+      ? `<rect x="${F(lgX)}" y="${y0 + 6}" width="11" height="11" rx="2" fill="${it.box}"/>`
+      : `<line x1="${F(lgX)}" y1="${y0 + 12}" x2="${F(lgX + 22)}" y2="${y0 + 12}" stroke="${it.line}" stroke-width="2.8"${it.dash ? ` stroke-dasharray="${it.dash}"` : ''}/>`;
     const tx = lgX + (it.box ? 16 : 27);
-    lg += \`<g class="mvrv-lg" data-s="${it.s}" style="cursor:pointer;opacity:${hid ? 0.35 : 1}"><title>Clique para mostrar/ocultar</title>\` +
-      \`<rect x="${F(lgX - 4)}" y="${y0 + 2}" width="${F(w)}" height="18" fill="transparent"/>\` + mark +
-      \`<text x="${F(tx)}" y="${y0 + 16}" font-size="11" font-weight="700" fill="var(--text)" style="${hid ? 'text-decoration:line-through' : ''}">${esc(it.label)}</text></g>\`;
+    lg += `<g class="mvrv-lg" data-s="${it.s}" style="cursor:pointer;opacity:${hid ? 0.35 : 1}"><title>Clique para mostrar/ocultar</title>` +
+      `<rect x="${F(lgX - 4)}" y="${y0 + 2}" width="${F(w)}" height="18" fill="transparent"/>` + mark +
+      `<text x="${F(tx)}" y="${y0 + 16}" font-size="11" font-weight="700" fill="var(--text)" style="${hid ? 'text-decoration:line-through' : ''}">${esc(it.label)}</text></g>`;
     lgX += w + 6;
   }
+
   const dsp = s => MVRV_HIDE[s] ? 'display:none' : '';
   // Botão de reset do zoom (só aparece quando há zoom ativo)
-  const resetBtn = zoomed ? \`<g class="mvrv-reset" style="cursor:pointer"><title>Resetar zoom (ou duplo-clique)</title>\` +
-    \`<rect x="${x1 - 96}" y="${y0 + 1}" width="96" height="18" rx="9" fill="rgba(255,255,255,0.08)" stroke="var(--border)"/>\` +
-    \`<text x="${x1 - 48}" y="${y0 + 14}" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)">⟲ resetar zoom</text></g>\` : '';
+  const resetBtn = zoomed ? `<g class="mvrv-reset" style="cursor:pointer"><title>Resetar zoom (ou duplo-clique)</title>` +
+    `<rect x="${x1 - 96}" y="${y0 + 1}" width="96" height="18" rx="9" fill="rgba(255,255,255,0.08)" stroke="var(--border)"/>` +
+    `<text x="${x1 - 48}" y="${y0 + 14}" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)">⟲ resetar zoom</text></g>` : '';
   // Ordem das camadas importa: o retângulo que capta o mouse fica ABAIXO da legenda
   // (pra legenda receber cliques) e o crosshair tem pointer-events:none (pra NÃO roubar
   // o mouse e fazer o tooltip piscar). A legenda/reset ficam por último (mais no topo).
-  const svg = \`<svg id="mvrv-svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" font-family="'IBM Plex Mono', monospace">
+  const svg = `<svg id="mvrv-svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" font-family="'IBM Plex Mono', monospace">
     ${grid}${axX}
     <g id="mvrv-area" style="${dsp('mvrv')}">${areaInner}</g>
     <g id="mvrv-ref37" style="${dsp('ref37')}">${ref37}</g>${ref1}
@@ -2565,8 +2805,9 @@ function renderMVRV(D) {
     <circle id="mvrv-dot-mv" r="3.5" fill="${MVRV_COL[1]}" stroke="#fff" stroke-width="1" pointer-events="none" style="display:none"/>
     <circle id="mvrv-dot" r="3.5" fill="#f7931a" stroke="#fff" stroke-width="1" pointer-events="none" style="display:none"/>
     ${lg}${resetBtn}
-  </svg>\`;
+  </svg>`;
   setHTML('mvrv-chart', svg);
+
   // ---- badge "agora" ----
   const L = D.latest || {};
   const nb = el('mvrv-now');
@@ -2585,6 +2826,7 @@ function renderMVRV(D) {
     mvCard.textContent = nf(L.mvrv, 2);
     mvCard.style.color = ['var(--red)', 'var(--green)', 'var(--accent)'][mvrvBadge(L.mvrv)];
   }
+
   // ---- interatividade: legenda (toggle) + reset + crosshair + brush-to-zoom ----
   const svgEl = el('mvrv-svg');
   if (svgEl) {
@@ -2601,11 +2843,12 @@ function renderMVRV(D) {
     hit.addEventListener('dblclick', mvrvResetZoom);
   }
   if (!window.__mvrvBound) {   // listeners globais 1x (sobrevivem ao re-render; pegam o mouse fora do gráfico)
-    window\.addEventListener('mousemove', mvrvDragMove);
-    window\.addEventListener('mouseup', mvrvUp);
+    window.addEventListener('mousemove', mvrvDragMove);
+    window.addEventListener('mouseup', mvrvUp);
     window.__mvrvBound = true;
   }
 }
+
 // ---- brush-to-zoom (arrastar p/ ampliar um trecho) ----
 function mvrvVbx(ev) {
   const svg = el('mvrv-svg'); if (!svg || !MVRV_G) return null;
@@ -2634,11 +2877,13 @@ function mvrvUp(ev) {
   renderMVRV(MVRV_DATA);
 }
 function mvrvResetZoom() { if (MVRV_ZOOM) { MVRV_ZOOM = null; renderMVRV(MVRV_DATA); } }
+
 function mvrvAxisPrice(v) {
   if (v >= 1000) return (v / 1000) + 'k';
   if (v >= 1) return '' + v;
   return '' + v;
 }
+
 function mvrvHover(ev) {
   if (MVRV_DRAG) return;                 // durante o brush não mostra crosshair/tooltip
   const G = MVRV_G, svg = el('mvrv-svg'); if (!G || !svg) return;
@@ -2664,8 +2909,8 @@ function mvrvHover(ev) {
   const dt = new Date(G.startMs + idx * G.dayMs).toISOString().slice(0, 10);
   const tip = el('mvrv-tip'), wrap = el('mvrv-wrap');
   if (tip && wrap) {
-    tip.innerHTML = \`<b>${dt}</b><br>${t('mvrv_mvrv')}: <b style="color:${MVRV_COL_HI[z]}">${nf(G.mv[idx], 2)}</b><br>\` +
-      \`${esc(t('mvrv_price'))}: <b>${fmtPrice(G.pr[idx])}</b><br>${esc(t('mvrv_realized'))}: <b>${fmtPrice(real)}</b>\`;
+    tip.innerHTML = `<b>${dt}</b><br>${t('mvrv_mvrv')}: <b style="color:${MVRV_COL_HI[z]}">${nf(G.mv[idx], 2)}</b><br>` +
+      `${esc(t('mvrv_price'))}: <b>${fmtPrice(G.pr[idx])}</b><br>${esc(t('mvrv_realized'))}: <b>${fmtPrice(real)}</b>`;
     const wr = wrap.getBoundingClientRect();
     let left = ev.clientX - wr.left + 14;
     if (left > wr.width - 160) left = ev.clientX - wr.left - 160;
@@ -2678,6 +2923,7 @@ function mvrvHoverOut() {
   ['mvrv-cx', 'mvrv-dot', 'mvrv-dot-mv'].forEach(id => { const e = el(id); if (e) e.style.display = 'none'; });
   const tip = el('mvrv-tip'); if (tip) tip.style.opacity = '0';
 }
+
 // ── BITCOIN NA MESMA DATA (máquina do tempo) ───────────────────────────────────
 // Usa a série diária de preço (MVRV_DATA.price) p/ mostrar o preço do BTC na mesma
 // data (dia/mês escolhido) em cada ano, de hoje até 2010, + valorização até hoje.
@@ -2697,7 +2943,7 @@ function renderTimeMachine() {
   if (!sel || isNaN(sel)) { const n = new Date(); sel = new Date(Date.UTC(n.getFullYear(), n.getMonth(), n.getDate())); }
   const mo = sel.getUTCMonth(), day = sel.getUTCDate();
   const startMs = new Date(D.start + 'T00:00:00Z').getTime(), dayMs = 86400000, lastIdx = D.price.length - 1;
-  const now = new Date(), nowY = now\.getFullYear(), todayMid = Date.UTC(nowY, now\.getMonth(), now\.getDate());
+  const now = new Date(), nowY = now.getFullYear(), todayMid = Date.UTC(nowY, now.getMonth(), now.getDate());
   const liveBtc = (typeof allCoins !== 'undefined' && allCoins.length) ? ((allCoins.find(c => c.symbol && c.symbol.toLowerCase() === 'btc') || {}).current_price) : null;
   const todayP = liveBtc || (D.latest && D.latest.price) || D.price[lastIdx];
   const priceOn = (y) => {
@@ -2710,18 +2956,20 @@ function renderTimeMachine() {
     const dUTC = Date.UTC(y, mo, day), dateStr = String(day).padStart(2, '0') + '/' + String(mo + 1).padStart(2, '0') + '/' + y;
     let p = priceOn(y);
     if (p == null && y === nowY && dUTC <= todayMid) p = todayP;     // ano atual c/ lag do dado diário → usa o preço de hoje
-    if (p == null) { rows += \`<div class="td-row td-empty"><span class="td-year">${y}</span><span class="td-date">${dateStr}</span><span class="td-px">—</span><span class="td-grow"></span></div>\`; continue; }
+    if (p == null) { rows += `<div class="td-row td-empty"><span class="td-year">${y}</span><span class="td-date">${dateStr}</span><span class="td-px">—</span><span class="td-grow"></span></div>`; continue; }
     const isToday = (dUTC === todayMid), g = isToday ? null : tdGrowth(p, todayP);
-    rows += \`<div class="td-row"><span class="td-year">${y}</span><span class="td-date">${dateStr}</span><span class="td-px">${fmtPrice(p)}</span>\` +
-      \`<span class="td-grow ${isToday ? 'now' : (g.up ? 'up' : 'dn')}">${isToday ? t('td_today') : g.txt}</span></div>\`;
+    rows += `<div class="td-row"><span class="td-year">${y}</span><span class="td-date">${dateStr}</span><span class="td-px">${fmtPrice(p)}</span>` +
+      `<span class="td-grow ${isToday ? 'now' : (g.up ? 'up' : 'dn')}">${isToday ? t('td_today') : g.txt}</span></div>`;
   }
   setHTML('td-list', rows);
 }
+
 // ── ORCHESTRATOR ────────────────────────────────────────────────────────────
 async function refreshAll() {
   // Fonte única: o nosso snapshot servido na mesma origem (atualizado pelo poller no VPS).
   // Sem fallback para APIs externas — a ideia é justamente NÃO bater nas APIs a cada visita.
   const fresh = await get('data.json?_=' + Math.floor(Date.now() / 15000), 15000);
+
   if (fresh) {
     SNAP = fresh;
     try { localStorage.setItem('bitnada-snap', JSON.stringify(fresh)); } catch (e) {}
@@ -2729,16 +2977,19 @@ async function refreshAll() {
     // Se o data.json não carregou agora, usa o último snapshot bom salvo (em vez de "sem dados")
     try { const s = localStorage.getItem('bitnada-snap'); if (s) SNAP = JSON.parse(s); } catch (e) {}
   }
+
   if (!SNAP) {
     ['top20-section', 'dom-section', 'fg-section', 'dollar-section', 'stable-section', 'vol-section', 'custom-heatmap',
      'movers-section', 'giants-section', 'halving-section']
-      .forEach(id => setHTML(id, \`<div class="err">${t('unavailable')}</div>\`));
+      .forEach(id => setHTML(id, `<div class="err">${t('unavailable')}</div>`));
     set('ts', '— (sem conexão com o servidor de dados)');
     return;
   }
+
   const upd = SNAP.updated_at ? new Date(SNAP.updated_at) : new Date();
   set('ts', upd.toLocaleDateString(LOCALE) + ' ' +
     upd.toLocaleTimeString(LOCALE, { hour: '2-digit', minute: '2-digit', second: '2-digit' }));
+
   await Promise.allSettled([
     loadMarkets(),
     loadGlobal(),
@@ -2754,6 +3005,7 @@ async function refreshAll() {
     loadMVRV(),
   ]);
 }
+
 // Atualização automática (sem F5). Re-renderiza só as seções "vivas" — NÃO mexe no
 // velocímetro nem na pizza de dominância (têm animação de entrada e mudam só de 6h em 6h).
 async function autoRefresh() {
@@ -2774,6 +3026,7 @@ async function autoRefresh() {
   if (!MVRV_DATA) loadMVRV();   // só tenta de novo se ainda não carregou (dado diário)
   try { renderTimeMachine(); } catch (e) {}   // mantém o "hoje" da máquina do tempo vivo (preço ao vivo)
 }
+
 // ── THEME ───────────────────────────────────────────────────────────────────
 function initTheme() {
   const t = localStorage.getItem('bitnada-theme') || 'dark';
@@ -2784,6 +3037,7 @@ function syncThemeBtn() {
   const btn = el('btn-theme');
   if (btn) btn.textContent = document.body.classList.contains('light') ? '🌙 Escuro' : '☀️ Claro';
 }
+
 // ── COLLAPSE: torna cada .card recolhível pelo título ──────────────────────────
 function setupCollapse() {
   document.querySelectorAll('.card').forEach(card => {
@@ -2802,16 +3056,19 @@ function setupCollapse() {
     title.addEventListener('click', () => card.classList.toggle('collapsed'));
   });
 }
+
 // ── INIT ────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   setupCollapse();
   applyI18n();
+
   el('btn-theme').addEventListener('click', () => {
     document.body.classList.toggle('light');
     localStorage.setItem('bitnada-theme', document.body.classList.contains('light') ? 'light' : 'dark');
     syncThemeBtn();
   });
+
   // Máquina do tempo: data padrão = hoje (local) + recalcula ao trocar a data
   const tdInp = el('td-date');
   if (tdInp) {
@@ -2819,6 +3076,7 @@ document.addEventListener('DOMContentLoaded', () => {
     tdInp.value = n.getFullYear() + '-' + String(n.getMonth() + 1).padStart(2, '0') + '-' + String(n.getDate()).padStart(2, '0');
     tdInp.addEventListener('change', () => { try { renderTimeMachine(); } catch (e) {} });
   }
+
   // Idioma/formato dos números: PT-BR (padrão) ↔ EN
   const syncLocaleBtn = () => {
     const b = el('btn-locale'); if (b) b.textContent = LOCALE === 'pt-BR' ? '🇧🇷 PT-BR' : '🇺🇸 EN';
@@ -2832,6 +3090,7 @@ document.addEventListener('DOMContentLoaded', () => {
     applyI18n();     // textos estáticos (títulos, rótulos)
     refreshAll();    // re-renderiza as seções no novo idioma/formato
   });
+
   // Botões de expansão da tabela
   document.querySelectorAll('.tbl-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -2840,6 +3099,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderCoinTable(parseInt(btn.dataset.n, 10));
     });
   });
+
   // Alternância Moedas / Corretoras
   document.querySelectorAll('.heat-tab').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -2851,6 +3111,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderActiveHeat();
     });
   });
+
   // Quantidade no mapa de moedas (Atuais / Top 15 / Top 10)
   document.querySelectorAll('.heat-count').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -2860,6 +3121,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (heatView === 'coins') renderHeatmap();
     });
   });
+
   // Alternância Spot / Futures (corretoras)
   document.querySelectorAll('.heat-mode').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -2869,6 +3131,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (heatView === 'exch') renderExchanges();
     });
   });
+
   // Alternância Bitcoin / Ethereum (treasuries)
   document.querySelectorAll('.treas-tab').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -2878,21 +3141,25 @@ document.addEventListener('DOMContentLoaded', () => {
       loadTreasuries();
     });
   });
+
   // 📺 Modo TV — só liga por clique no botão do header ou abrindo a página com #tv
   const tvBtn = el('btn-tv');
   if (tvBtn) tvBtn.addEventListener('click', () => TV.on ? tvStop() : tvStart());
   document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && TV.on) tvStop(); });
   document.addEventListener('fullscreenchange', () => { if (!document.fullscreenElement && TV.on) tvStop(); });
   if (location.hash === '#tv') setTimeout(tvStart, 1800);   // link direto p/ OBS/live
+
   // Relógio do countdown do halving (1s)
   setInterval(hvTick, 1000);
+
   refreshAll();
+
   // Atualiza sozinho a cada 30s (sem F5) — acompanha o preço ao vivo (Binance, 30s no poller).
   // Pausa em aba oculta e atualiza ao voltar o foco.
   setInterval(() => { if (!document.hidden) autoRefresh(); }, 30000);
   document.addEventListener('visibilitychange', () => { if (!document.hidden) autoRefresh(); });
 });
 </script>
-
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a3b821e08ba0d94e',t:'MTc4OTQ4MDU2MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"ffde0976eba440bc820069dc556abfc8","r":1,"spa":2}' crossorigin="anonymous"></script>
 </body>
 </html>
